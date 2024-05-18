@@ -8,7 +8,7 @@ include_once('function/helper.php');
 
 $page = isset($_GET['page']) ? $_GET['page'] : false;
 
-$user_id = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : false;
+$id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : false;
 $nama = isset($_SESSION['nama_user']) ? $_SESSION['nama_user'] : false;
 $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
 ?>
@@ -45,7 +45,7 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
             </div>
             <div class="btn-user">
                 <?php
-                if ($user_id) {
+                if ($id_user) {
                     echo "<div style='display: flex; gap:20px;'>
                             <p style='color: black; cursor:default;'>Selamat datang, <b>$nama</b></p>
                             <a style='text-decoration:none; color:black;' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=list'>Kontrol</a>

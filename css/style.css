@@ -47,10 +47,10 @@
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
 }
 
 .btn-user > #login {
+    cursor: pointer;
     background-color: green;
     color: white;
     padding: 6px 18px;
@@ -62,6 +62,7 @@
 }
 
 .btn-user > #register {
+    cursor: pointer;
     border: 0.5px solid rgb(0, 0, 0);
     padding: 5px 15px;
     border-radius: 5px;

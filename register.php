@@ -1,6 +1,6 @@
 <?php
 
-if ($user_id) {
+if ($id_user) {
     header("location: " . BASE_URL);
 }
 

@@ -3,6 +3,12 @@
 include_once("function/database.php");
 include_once("function/helper.php");
 
+session_start();
+
+$_SESSION['id_user'] = $row['id_user'];
+$_SESSION['nama_user'] = $row['nama_user'];
+$_SESSION['level_user'] = $row['level_user'];
+
 $email = $_POST['email_user'];
 $password = md5($_POST['password_user']);
 
