@@ -37,6 +37,11 @@ if ($id_user) {
                             echo "class='active'";
                         } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=user&action=list"; ?>">User</a>
                 </li>
+                <li>
+                    <a <?php if ($module == "masukan") {
+                            echo "class='active'";
+                        } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=masukan&action=list"; ?>">Masukan</a>
+                </li>
 
             <?php
             } else {

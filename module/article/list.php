@@ -1,3 +1,7 @@
+<div>
+    <a href="<?php echo BASE_URL."index.php?page=my_profile&module=article&action=form_tambah"; ?>">+ Tambah Article</a>
+</div>
+
 <?php
 $no = 1;
 
@@ -7,14 +11,14 @@ if (mysqli_num_rows($queryArticle) == 0) {
     echo "<h3>Saat ini belum ada data article yang dimasukan</h3>";
 } else {
     echo "<table class='table-list'>";
-
     echo "<tr class='baris-title'>
                     <th class='kolom-nomor'>No</th>
                     <th class='kiri'>Gambar</th>
                     <th class='kiri'>Judul</th>
                     <th class='kiri'>Kategori</th>
-                    <th class='kiri'>Tanggal</th>
+                    <th class='kiri'>Deskripsi</th>
                     <th class='kiri'>Author</th>
+                    <th class='kiri'>Tanggal</th>
                     <th class='tengah'>Status</th>
                     <th class='tengah'h>Action</th>
                  </tr>";
@@ -25,12 +29,13 @@ if (mysqli_num_rows($queryArticle) == 0) {
                         <td>$rowArticle[gambar_article]</td>
                         <td>$rowArticle[judul_article]</td>
                         <td>$rowArticle[kategori_article]</td>
-                        <td>$rowArticle[tanggal_article]</td>
+                        <td>$rowArticle[deskripsi_article]</td>
                         <td>$rowArticle[author_article]</td>
+                        <td>$rowArticle[tanggal_article]</td>
                         <td class='tengah'>$rowArticle[status_article]</td>
                         <td class='tengah'>
-                        <a class='tombol-action' href='" . BASE_URL . "index.php?page=my_profile&module=article&action=form&id_article=$rowArticle[id_article]" . "'>Edit</a>
-                        <a class='tombol-action' href='" . BASE_URL . "index.php?page=my_profile&module=article&action=delete&id_article=$rowArticle[id_article]" . "'>Delete</a>
+                        <a class='tombol-action' href='" . BASE_URL . "index.php?page=my_profile&module=article&action=form_edit&id_article=$rowArticle[id_article]" . "'>Edit</a>
+                        <a class='tombol-action' href='" . BASE_URL . "index.php?page=my_profile&module=article&action=hapus&id_article=$rowArticle[id_article]" . "'>Delete</a>
                         </td>
                      </tr>";
 

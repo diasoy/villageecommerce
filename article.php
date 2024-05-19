@@ -1,7 +1,7 @@
 <?php
 include_once("function/database.php");
 
-$query = "SELECT * FROM article";
+$query = "SELECT * FROM article WHERE status_article = 'on' ORDER BY id_article DESC";
 $result = mysqli_query($koneksi, $query);
 
 if (!$result) {

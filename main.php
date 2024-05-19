@@ -27,6 +27,16 @@
     <h1>Berita Desa</h1>
 </div>
 
+<div class="masukan">
+    <h1>Masukan</h1>
+    <form action="">
+        <input type="text" placeholder="Nama">
+        <input type="text" placeholder="Email">
+        <textarea name="" id="" cols="30" rows="10" placeholder="Masukan anda"></textarea>
+        <input type="submit" value="Kirim Masukan">
+    </form>
+</div>
+
 <footer>
     <h1>ini adalah footer</h1>
 </footer>
