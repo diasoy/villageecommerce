@@ -2,20 +2,21 @@
 
 $id_mitra = $_GET["id_mitra"];
 
-$query = mysqli_query($koneksi, "SELECT status_mitra FROM mitra WHERE id_mitra='$id_mitra'");
+$query = mysqli_query($koneksi, "SELECT status_mitra, nama_mitra FROM mitra WHERE id_mitra='$id_mitra'");
 $row = mysqli_fetch_assoc($query);
-$status = $row['status_mitra'];
+$namaMitra = $row["nama_mitra"];
+$statusMitra = $row['status_mitra'];
 
 ?>
-<form action="<?php echo BASE_URL . "module/mitra/action.php?id_mitra=$id_mitra"; ?>" method="POST">
+<form action="<?php echo BASE_URL . "module/mitra/edit.php?id_mitra=$id_mitra"; ?>" method="POST">
 
     <div class="element-form">
         <label>Id Mitra</label>
         <span><input type="text" value="<?php echo $id_mitra; ?>" name="id_mitra" readonly="true" /></span>
     </div>
     <div class="element-form">
-        <label>Nama User</label>
-        <span><input type="text" value="<?php echo $id_user; ?>" name="id_user" readonly="true" /></span>
+        <label>Nama Mitra</label>
+        <span><input type="text" value="<?php echo $namaMitra; ?>" name="nama_mitra" readonly="true" /></span>
     </div>
 
     <div class="element-form">

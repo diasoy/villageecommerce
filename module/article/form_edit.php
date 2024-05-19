@@ -10,7 +10,6 @@ $kategoriArticle = $row["kategori_article"];
 $deskripsiArticle = $row["deskripsi_article"];
 $authorArticle = $row["author_article"];
 $statusArticle = $row["status_article"];
-$button = "Update";
 
 
 ?>

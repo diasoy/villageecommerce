@@ -2,10 +2,9 @@
 
 define("BASE_URL", "http://localhost/pemweb/vicom/");
 
-$arrayStatusPesanan[0] = "Menunggu Pembayaran";
-$arrayStatusPesanan[1] = "Pembayaran Sedang Di Validasi";
-$arrayStatusPesanan[2] = "Lunas";
-$arrayStatusPesanan[3] = "Pembayaran Di Tolak";
+$arrayStatusMitra[0] = "Menunggu";
+$arrayStatusMitra[1] = "Diterima";
+$arrayStatusMitra[2] = "Ditolak";
 
 function rupiah($nilai = 0)
 {

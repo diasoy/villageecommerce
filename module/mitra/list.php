@@ -1,11 +1,8 @@
-<div>
-    <a href="<?php echo BASE_URL."index.php?page=my_profile&module=mitra&action=form_tambah"; ?>">+ Tambah Mitra</a>
-</div>
-
 <?php
 
 $no = 1;
 
+$id_user = $_SESSION['id_user'];
 $queryAdmin = mysqli_query($koneksi, "SELECT * FROM mitra ORDER BY nama_mitra ASC");
 $queryMitra = mysqli_query($koneksi, "SELECT * FROM mitra WHERE id_user='$id_user' ORDER BY nama_mitra ASC");
 
@@ -16,12 +13,9 @@ if (mysqli_num_rows($queryAdmin)  == 0) {
         echo "<table class='table-list'>";
         echo "<tr class='baris-title'>
                     <th class='kolom-nomor'>No</th>
-                    <th class='kiri'>Gambar</th>
+                    <th class='kiri'>Id User</th>
                     <th class='kiri'>Nama</th>
                     <th class='kiri'>Kategori</th>
-                    <th class='kiri'>Deskripsi</th>
-                    <th class='kiri'>Rincian Harga</th>
-                    <th class='kiri'>Contact</th>
                     <th class='tengah'>Status</th>
                     <th class='tengah'h>Action</th>
                  </tr>";
@@ -29,16 +23,13 @@ if (mysqli_num_rows($queryAdmin)  == 0) {
         while ($rowUser = mysqli_fetch_array($queryAdmin)) {
             echo "<tr>
                         <td class='kolom-nomor'>$no</td>
-                        <td>$rowUser[gambar_mitra]</td>
+                        <td>$rowUser[id_user]</td>
                         <td>$rowUser[nama_mitra]</td>
                         <td>$rowUser[kategori_mitra]</td>
-                        <td>$rowUser[deskripsi_mitra]</td>
-                        <td>$rowUser[rincian_harga]</td>
-                        <td>$rowUser[phone_mitra]</td>
                         <td>$rowUser[status_mitra]</td>
                         <td class='tengah'>
-                        <a class='tombol-edit' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=form&id_mitra=$rowUser[id_mitra]" . "'>Edit</a>
-                        <a class='tombol-delete' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=action&button=delete&id_mitra=$rowUser[id_mitra]" . "'>Delete</a>
+                        <a class='tombol-edit' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=status&id_mitra=$rowUser[id_mitra]" . "'>Edit</a>
+                        <a class='tombol-delete' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=hapus&id_mitra=$rowUser[id_mitra]" . "'>Delete</a>
                         </td>
                      </tr>";
 
@@ -48,8 +39,7 @@ if (mysqli_num_rows($queryAdmin)  == 0) {
         //AKHIR DARI TABLE
         echo "</table>";
     } else {
-
-        echo "<a href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=form' class='tombol-action'>+ Tambah Mitra</a>";
+        echo "<a href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=form_tambah' class='tombol-action'>Tambah Mitra</a>";
         echo "<table class='table-list'>";
         echo "<tr class='baris-title'>
                     <th class='kolom-nomor'>No</th>
@@ -74,8 +64,8 @@ if (mysqli_num_rows($queryAdmin)  == 0) {
                         <td>$rowUser[phone_mitra]</td>
                         <td>$rowUser[status_mitra]</td>
                         <td class='tengah'>
-                            <a class='tombol-action' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=form&id_mitra=$rowUser[id_mitra]" . "'>Edit</a>
-                            <a class='tombol-action' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=action&button=delete&id_mitra=$rowUser[id_mitra]" . "'>Delete</a>
+                            <a class='tombol-action' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=form_edit&id_mitra=$rowUser[id_mitra]" . "'>Edit</a>
+                            <a class='tombol-action' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=hapus&id_mitra=$rowUser[id_mitra]" . "'>Delete</a>
                         </td>
                      </tr>";
 
