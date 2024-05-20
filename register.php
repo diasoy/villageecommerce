@@ -25,39 +25,39 @@ if ($id_user) {
             echo "<div class='notif'>Maaf, email yang kamu masukan sudah terdaftar</div>";
         }
         ?>
-        <div class="">
-            <div class="nama-register">
+        <div class="form-login-register">
+            <div class="login-register-input">
                 <label>Nama Lengkap</label>
-                <span><input type="text" name="nama_user" value="<?php echo $nama_lengkap; ?>" /></span>
+                <input type="text" name="nama_user" value="<?php echo $nama_lengkap; ?>" />
             </div>
 
-            <div class="email-register">
+            <div class="login-register-input">
                 <label>Email</label>
-                <span><input type="text" name="email_user" value="<?php echo $email; ?>" /></span>
+                <input type="text" name="email_user" value="<?php echo $email; ?>" />
             </div>
 
-            <div class="phone-register">
+            <div class="login-register-input">
                 <label>Nomor Telepon / Handphone</label>
-                <span><input type="text" name="phone_user" value="<?php echo $phone; ?>" /></span>
+                <input type="text" name="phone_user" value="<?php echo $phone; ?>" />
             </div>
 
-            <div class="alamat-register">
+            <div class="login-register-input">
                 <label>Alamat</label>
-                <span><textarea name="alamat_user"><?php echo $alamat; ?></textarea></span>
+                <textarea name="alamat_user"><?php echo $alamat; ?></textarea>
             </div>
 
-            <div class="password-register">
+            <div class="login-register-input">
                 <label>Password</label>
-                <span><input type="password" name="password_user" /></span>
+                <input type="password" name="password_user" />
             </div>
 
-            <div class="retype-register">
+            <div class="login-register-input    ">
                 <label>Re-type Password</label>
-                <span><input type="password" name="re_password" /></span>
+                <input type="password" name="re_password" />
             </div>
 
-            <div class="btn-register">
-                <span><input type="submit" value="register" /></span>
+            <div class="">
+                <button class="register-btn" type="submit">Register</button>
             </div>
         </div>
     </form>

@@ -14,12 +14,19 @@
         <h1>Jelajahi UMKM Desa</h1>
         <p>Melalui Website anda dapat mengetahui UMKM terbaik di Desa ini.</p>
     </div>
-    <div></div>
+    <div class="list-img-umkm">
+        <img src="assets/images/umkm1.jpg" alt="umkm1" class="img-umkm">
+        <img src="assets/images/umkm2.jpg" alt="umkm2" class="img-umkm">
+    </div>
 </div>
 
 <div class="sambutan">
-    <div>
+    <div class="foto-sambutan">
+        <img src="assets/images/kepaladesa.jpg" alt="kepaladesa" class="img-kepaladesa">
+    </div>
+    <div class="teks-sambutan">
         <h1>Sambutan Kepala Desa</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem iusto ipsa ratione iste, tempore nesciunt magnam. Ipsa, nemo molestiae aut, tempore optio dignissimos blanditiis repellat quas non quae illum iusto rerum velit sit, quisquam unde? Quis voluptas at laudantium aut, architecto, cupiditate dolor aliquam ex inventore fugiat id impedit unde nam consectetur veritatis maxime ea corrupti necessitatibus iste dolorem alias quisquam earum. Porro odio, recusandae omnis temporibus nihil iure illo sit dignissimos eos dolorem nam enim et rem aliquid, labore veritatis doloremque </p>
     </div>
 </div>
 

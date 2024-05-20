@@ -1,88 +1,120 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* RESET CSS  */
+html, body, div, span, applet, object, iframe,
+ p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
 }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* RESET CSS END */
 
 /* index */
 .navbar {
-    padding: 20px;
-    max-width: 1440px;
-    margin: 0 auto;
+  padding: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.title-nav {
+  color: black;
 }
 
 .navbar-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar-list > div > a {
-    color: black;
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .nav-menu > a {
-    color: black;
-    text-decoration: none;
-    padding: 6px 12px;
-
+  color: black;
+  text-decoration: none;
+  padding: 6px 12px;
 }
 
 .nav-menu > a:hover {
-    background: green;
-    color: white;
-    border-radius: 5px;
-    transition: 0.5s;
+  background: green;
+  color: white;
+  border-radius: 5px;
+  transition: 0.5s;
 }
 
-.btn-user {
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+.btn-login {
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  padding: 6px 18px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
-.btn-user > #login {
-    cursor: pointer;
-    background-color: green;
-    color: white;
-    padding: 6px 18px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+.btn-register {
+  cursor: pointer;
+  padding: 5px 15px;
+  color: black;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
-.btn-user > #register {
-    cursor: pointer;
-    border: 0.5px solid rgb(0, 0, 0);
-    padding: 5px 15px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+.btn-login:hover {
+  background-color: rgb(0, 73, 0);
+  transition: 0.5s;
 }
 
-.btn-user > #login:hover {
-    background-color: rgb(0, 73, 0);
-    color: rgb(255, 255, 255);
-    transition: 0.5s;
-}
-
-.btn-user > #register:hover {
-    background-color: green;
-    border: none;
-    color: rgb(255, 255, 255);
-    transition: 0.5s;
+.btn-register:hover {
+  background-color: rgb(214, 255, 101);
+  border: none;
+  transition: 0.5s;
 }
 
 /* index end */
@@ -90,96 +122,220 @@
 /* main */
 
 .img-hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
 }
 
-.main-hero{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+.main-hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .main-hero > div > h1 {
-    font-size: 3rem;
-    color: white;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
-    animation: fadeIn 2s ease-in-out;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 2s ease-in-out;
 }
 
 .main-hero > div > p {
-    font-size: 1.5rem;
-    color: white;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
-    animation: fadeIn 2s ease-in-out;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 2s ease-in-out;
 }
 
 .main-hero > button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: green;
-    color: white;
-    font-size: 1rem;
-    animation: fadeIn 2s ease-in-out;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  font-size: 1rem;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .main-hero > button:hover {
-    background-color: rgb(255, 255, 255);
-    color: green;
-    transition: 0.5s;
+  background-color: rgb(255, 255, 255);
+  color: green;
+  transition: 0.5s;
 }
 
 /* main end */
 
 /* jelajahi */
 .jelajahi {
-    padding: 20px;
-    max-width: 1440px;
-    margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:200px;
+  padding: 20px;
+  max-width: 1440px;
+  margin: 50px auto;
+}
+
+.list-img-umkm {
+  display: flex;
+  gap: 20px;
+}
+
+.img-umkm{
+  width: 100%;
+  height: 100%;
+  max-width: 300px; /* Menambahkan ini */
+  object-fit: cover;
+  border-radius: 12px;
 }
 /* jelajahi end */
 
 /* sambutan */
 .sambutan {
-    padding: 20px;
-    max-width: 1440px;
-    margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1440px;
+  margin: 50px auto;
+}
+.img-kepaladesa{
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.foto-sambutan{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teks-sambutan{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
 }
 /* sambutan end */
 
 /* berita desa */
 .berita-desa {
-    padding: 20px;
-    max-width: 1440px;
-    margin: 50px auto;
+  padding: 20px;
+  max-width: 1440px;
+  margin: 50px auto;
 }
 /* berita desa end  */
 
 /* login */
-.login{
-    padding: 20px;
-    max-width: 1440px;
-    margin: 50px auto;
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 1440px;
+  margin: 50px auto;
 }
+
+.form-login-register {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: aliceblue;
+  padding: 40px 80px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 20px lightblue;
+}
+
+.login-register-input{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.login-btn{
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: green;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.form-login-register > div > input {
+  padding: 4px 12px;
+  border-radius: 6px;
+
+}
+
+.login-btn:hover {
+  background-color: rgb(0, 73, 0);
+  transition: 0.5s;
+}
+
 /* login end  */
 
 /* register  */
 .register {
-    padding: 20px;
-    max-width: 1440px;
-    margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 1440px;
+  margin: 50px auto;
 }
+
+.form-register{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: aliceblue;
+  padding: 40px 80px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 20px lightblue;
+}
+
+.register-btn{
+padding: 6px 12px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+background-color: green;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+}
+
+
 /* register end  */

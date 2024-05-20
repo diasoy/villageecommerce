@@ -7,6 +7,7 @@ if ($id_user) {
 ?>
 
 <div class="login">
+    <h1>Login</h1>
 
     <form action="<?php echo BASE_URL . "proses_login.php"; ?>" method="POST">
 
@@ -19,19 +20,20 @@ if ($id_user) {
         }
 
         ?>
-        <div>
-            <div class="">
+        <div class="form-login-register">
+            <div class="login-register-input">
                 <label>Email</label>
-                <span><input type="text" name="email_user" /></span>
+                <input type="text" name="email_user" />
             </div>
 
-            <div class="">
+            <div class="login-register-input">
                 <label>Password</label>
-                <span><input type="password" name="password_user" /></span>
+                <input type="password" name="password_user" />
             </div>
 
+
             <div class="">
-                <span><input type="submit" value="login" /></span>
+                <button class="login-btn" type="submit">Login</button>
             </div>
         </div>
 

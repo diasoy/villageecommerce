@@ -35,7 +35,7 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
     <nav class="navbar">
         <div class="navbar-list">
             <div id="logo">
-                <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class="">Village E Commerce</a>
+                <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class="title-nav">Village E Commerce</a>
             </div>
             <div class="nav-menu">
                 <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class=" ">Home</a>
@@ -52,8 +52,8 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
                             <a style='text-decoration:none; color:black;' href='" . BASE_URL . "index.php?page=logout'>Logout</a>
                         </div>";
                 } else {
-                    echo "<a href='" . BASE_URL . "index.php?page=login'?>Login</a>
-                   <a href='" . BASE_URL . "index.php?page=register'?>Register</a>";
+                    echo "<a class='btn-login' href='" . BASE_URL . "index.php?page=login'?>Login</a>
+                   <a class='btn-register' href='" . BASE_URL . "index.php?page=register'?>Register</a>";
                 }
                 ?>
             </div>

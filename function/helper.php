@@ -1,6 +1,6 @@
 <?php
 
-define("BASE_URL", "http://localhost/pemweb/vicom/");
+define("BASE_URL", "http://localhost/pemweb/villageecommerce/");
 
 $arrayStatusMitra[0] = "Menunggu";
 $arrayStatusMitra[1] = "Diterima";
