@@ -9,61 +9,57 @@ if ($id_user) {
 }
 
 ?>
-<div id="bg-page-profile">
+<div class="bg-page-profile">
+    <?php
+    if ($level == "admin") {
+    ?>
+        <div class="menu-admin">
+            <div>
+                <a <?php if ($module == "article") {
+                        echo "class='active'";
+                    } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=article&action=list"; ?>">Article</a>
+            </div>
+            <div>
+                <a <?php if ($module == "directory") {
+                        echo "class='active'";
+                    } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=directory&action=list"; ?>">Directory</a>
+            </div>
+            <div>
+                <a <?php if ($module == "mitra") {
+                        echo "class='active'";
+                    } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=mitra&action=list"; ?>">Mitra</a>
+            </div>
+            <div>
+                <a <?php if ($module == "user") {
+                        echo "class='active'";
+                    } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=user&action=list"; ?>">User</a>
+            </div>
+            <div>
+                <a <?php if ($module == "masukan") {
+                        echo "class='active'";
+                    } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=masukan&action=list"; ?>">Masukan</a>
+            </div>
+        </div>
 
-    <div id="menu-profile">
-
-        <ul>
-            <?php
-            if ($level == "admin") {
-            ?>
-                <li>
-                    <a <?php if ($module == "article") {
-                            echo "class='active'";
-                        } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=article&action=list"; ?>">Article</a>
-                </li>
-                <li>
-                    <a <?php if ($module == "directory") {
-                            echo "class='active'";
-                        } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=directory&action=list"; ?>">Directory</a>
-                </li>
-                <li>
-                    <a <?php if ($module == "mitra") {
-                            echo "class='active'";
-                        } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=mitra&action=list"; ?>">Mitra</a>
-                </li>
-                <li>
-                    <a <?php if ($module == "user") {
-                            echo "class='active'";
-                        } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=user&action=list"; ?>">User</a>
-                </li>
-                <li>
-                    <a <?php if ($module == "masukan") {
-                            echo "class='active'";
-                        } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=masukan&action=list"; ?>">Masukan</a>
-                </li>
-
-            <?php
-            } else {
-            ?>
-                <li>
-                    <a <?php if ($module == "mitra") {
-                            echo "class='active'";
-                        } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=mitra&action=list"; ?>">Mitra</a>
-                </li>
-                <li>
-                    <a <?php if ($module == "laporan") {
-                            echo "class='active'";
-                        } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=laporan&action=list"; ?>">Laporan</a>
-                </li>
-            <?php  } ?>
+    <?php
+    } else {
+    ?>
+        <div class="menu-mitra">
+            <div>
+                <a <?php if ($module == "mitra") {
+                        echo "class='active'";
+                    } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=mitra&action=list"; ?>">Mitra</a>
+            </div>
+            <div>
+                <a <?php if ($module == "laporan") {
+                        echo "class='active'";
+                    } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=laporan&action=list"; ?>">Laporan</a>
+            </div>
+        </div>
+    <?php  } ?>
 
 
-        </ul>
-
-    </div>
-
-    <div id="profile-content">
+    <div class="profile-content">
         <?php
         $file = "module/$module/$action.php";
         if (file_exists($file)) {
@@ -73,5 +69,4 @@ if ($id_user) {
         }
         ?>
     </div>
-
 </div>

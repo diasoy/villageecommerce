@@ -43,7 +43,6 @@ if (mysqli_num_rows($queryAdmin)  == 0) {
         echo "<table class='table-list'>";
         echo "<tr class='baris-title'>
                     <th class='kolom-nomor'>No</th>
-                    <th class='kiri'>Gambar</th>
                     <th class='kiri'>Nama</th>
                     <th class='kiri'>Kategori</th>
                     <th class='kiri'>Deskripsi</th>
@@ -56,7 +55,6 @@ if (mysqli_num_rows($queryAdmin)  == 0) {
         while ($rowUser = mysqli_fetch_array($queryMitra)) {
             echo "<tr>
                         <td class='kolom-nomor'>$no</td>
-                        <td>$rowUser[gambar_mitra]</td>
                         <td>$rowUser[nama_mitra]</td>
                         <td>$rowUser[kategori_mitra]</td>
                         <td>$rowUser[deskripsi_mitra]</td>
@@ -68,8 +66,7 @@ if (mysqli_num_rows($queryAdmin)  == 0) {
                             <a class='tombol-action' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=hapus&id_mitra=$rowUser[id_mitra]" . "'>Delete</a>
                         </td>
                      </tr>";
-
             $no++;
         }
-    }
+        echo "</table>";    }
 }

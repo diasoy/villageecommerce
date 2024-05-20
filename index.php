@@ -23,17 +23,17 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/output.css">
     <style>
         * {
-            font-family: 'Inter';
+            font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-list">
+    <nav class="fixed w-full bg-white z-50">
+        <div class="flex justify-around py-4">
             <div id="logo">
                 <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class="title-nav">Village E Commerce</a>
             </div>

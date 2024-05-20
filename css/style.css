@@ -44,6 +44,54 @@ table {
 
 /* RESET CSS END */
 
+/* table  */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.kolom-nomor {
+  width: 5%;
+}
+
+.kiri {
+  text-align: left;
+}
+
+.tengah {
+  text-align: center;
+}
+
+.baris-title {
+  background-color: #0077ff;
+  color: white;
+}
+
+.tombol-action {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.tombol-action:hover {
+  background-color: #45a049;
+}
+
+/* table end  */
+
 /* index */
 .navbar {
   padding: 20px;
@@ -336,6 +384,39 @@ justify-content: center;
 align-items: center;
 width: 100%;
 }
-
-
 /* register end  */
+
+/* kontrol  */
+.bg-page-profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: aliceblue;
+  padding: 20px;
+  width: 100%;
+}
+
+.menu-admin{
+  /* display: flex;
+  background-color: aliceblue;
+  padding: 20px;
+  max-width: 1440px;
+  margin: 50px auto; */
+}
+
+.menu-mitra{
+  display: flex;
+  background-color: aliceblue;
+  justify-content: center;
+  gap: 20px;
+}
+
+.profile-content{
+  /* display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center; */
+}
+/* kontrol end  */
