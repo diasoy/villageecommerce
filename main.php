@@ -1,18 +1,17 @@
-<div class="pt-10">
-    <img src="assets/images/hero.jpg" alt="hero" class="relative w-full h-[100vh] object-cover">
-    <div class="absolute top-1/2 z-10 mx-5">
-        <div class="text-center">
-            <h1 class="text-xl font-bold text-white">Welcome to Village E Commerce</h1>
-            <p class="text-white">The best place to find your favorite UMKM products</p>
+<link rel="stylesheet" href="css/output.css">
+
+<div class="pt-10 flex w-full justify-center items-center h-[100vh]" style="background-image: url('assets/images/hero.jpg')">
+    <div class="mx-5">
+        <div class="flex flex-col justify-center items-center gap-8">
+            <h1 class="font-bold text-white text-5xl drop-shadow-lg"><span class="bg-green-600">Welcome</span> to Village E Commerce</h1>
+            <p class="text-white text-lg">The best place to find your favorite UMKM products</p>
         </div>
-        <button class="py-2 bg-green-600 text-white rounded shadow flex justify-center w-full hover:bg-white hover:duration-500 hover:text-green-800">Lihat Para Mitra</button>
     </div>
 </div>
 
 <div class="m-4">
     <div class="mb-2">
-        <h1 class="font-bold text-lg">Jelajahi UMKM Desa</h1>
-        <p class="">Melalui Website anda dapat mengetahui UMKM terbaik di Desa ini.</p>
+        <p class="">Melalui Website ini anda dapat mengetahui UMKM terbaik di Desa ini.</p>
     </div>
     <div class="flex flex-col gap-3">
         <img src="assets/images/umkm1.jpg" alt="umkm1" class="rounded">

@@ -9,42 +9,42 @@ if ($id_user) {
 }
 
 ?>
-<div class="bg-page-profile">
+<div class="flex w-full justify-center items-start py-20">
     <?php
     if ($level == "admin") {
     ?>
-        <div class="menu-admin">
-            <div>
+        <ul class="bg-green-600 flex ml-10 w-1/5 flex-col gap-4 p-4 text-white">
+            <li class="w-full">
                 <a <?php if ($module == "article") {
-                        echo "class='active'";
+                        echo "class='w-full text-white bg-orange-500 hover:bg-orange-400 '";
                     } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=article&action=list"; ?>">Article</a>
-            </div>
-            <div>
+            </li>
+            <li class="w-full">
                 <a <?php if ($module == "directory") {
-                        echo "class='active'";
+                        echo "class='w-full text-white bg-orange-500 hover:bg-orange-400 '";
                     } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=directory&action=list"; ?>">Directory</a>
-            </div>
-            <div>
+            </li>
+            <li class="w-full">
                 <a <?php if ($module == "mitra") {
-                        echo "class='active'";
+                        echo "class='w-full text-white bg-orange-500 hover:bg-orange-400 '";
                     } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=mitra&action=list"; ?>">Mitra</a>
-            </div>
-            <div>
+            </li>
+            <li class="w-full">
                 <a <?php if ($module == "user") {
-                        echo "class='active'";
+                        echo "class='w-full text-white bg-orange-500 hover:bg-orange-400 '";
                     } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=user&action=list"; ?>">User</a>
-            </div>
-            <div>
+            </li>
+            <li class="w-full">
                 <a <?php if ($module == "masukan") {
-                        echo "class='active'";
+                        echo "class='w-full text-white bg-orange-500 hover:bg-orange-400 '";
                     } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=masukan&action=list"; ?>">Masukan</a>
-            </div>
-        </div>
+            </li>
+        </ul>
 
     <?php
     } else {
     ?>
-        <div class="menu-mitra">
+        <div class="flex w-1/5">
             <div>
                 <a <?php if ($module == "mitra") {
                         echo "class='active'";
@@ -59,7 +59,7 @@ if ($id_user) {
     <?php  } ?>
 
 
-    <div class="profile-content">
+    <div class="flex w-4/5">
         <?php
         $file = "module/$module/$action.php";
         if (file_exists($file)) {

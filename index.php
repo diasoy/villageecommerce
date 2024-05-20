@@ -23,6 +23,7 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/output.css">
     <style>
         * {
@@ -32,28 +33,28 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
 </head>
 
 <body>
-    <nav class="fixed w-full bg-white z-50">
-        <div class="flex justify-around py-4">
+    <nav class="fixed w-full bg-white z-50 py-5 shadow">
+        <div class="flex justify-around items-center">
             <div id="logo">
-                <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class="title-nav">Village E Commerce</a>
+                <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class="font-bold text-xl">Village E Commerce</a>
             </div>
-            <div class="nav-menu">
-                <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class=" ">Home</a>
-                <a href="<?php echo BASE_URL . "index.php?page=article"; ?>" class=" ">Article</a>
-                <a href="<?php echo BASE_URL . "index.php?page=documentation"; ?>" class=" ">Documentation</a>
-                <a href="<?php echo BASE_URL . "index.php?page=directory"; ?>" class=" ">Directory UMKM</a>
+            <div class="flex gap-10">
+                <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class="text-sm">Home</a>
+                <a href="<?php echo BASE_URL . "index.php?page=article"; ?>" class="text-sm">Article</a>
+                <a href="<?php echo BASE_URL . "index.php?page=documentation"; ?>" class="text-sm">Documentation</a>
+                <a href="<?php echo BASE_URL . "index.php?page=directory"; ?>" class="text-sm">Directory UMKM</a>
             </div>
             <div class="btn-user">
                 <?php
                 if ($id_user) {
-                    echo "<div style='display: flex; gap:20px;'>
-                            <p style='color: black; cursor:default;'>Selamat datang, <b>$nama</b></p>
-                            <a style='text-decoration:none; color:black;' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=list'>Kontrol</a>
-                            <a style='text-decoration:none; color:black;' href='" . BASE_URL . "index.php?page=logout'>Logout</a>
+                    echo "<div class='flex gap-5 items-center'>
+                            <p class='text-sm' style='color: black; cursor:default;'>Selamat datang, <b>$nama</b></p>
+                            <a class='text-sm bg-slate-400 px-2 py-1 rounded' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=list'>Kontrol</a>
+                            <a class='text-sm bg-red-700 text-white px-2 py-1 rounded' href='" . BASE_URL . "index.php?page=logout'>Logout</a>
                         </div>";
                 } else {
-                    echo "<a class='btn-login' href='" . BASE_URL . "index.php?page=login'?>Login</a>
-                   <a class='btn-register' href='" . BASE_URL . "index.php?page=register'?>Register</a>";
+                    echo "<a class='bg-green-600 px-5 py-1 text-sm rounded text-white' href='" . BASE_URL . "index.php?page=login'?>Login</a>
+                   <a class='bg-green-100 px-5 py-1 text-sm rounded' href='" . BASE_URL . "index.php?page=register'?>Register</a>";
                 }
                 ?>
             </div>

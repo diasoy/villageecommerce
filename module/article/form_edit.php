@@ -14,43 +14,45 @@ $statusArticle = $row["status_article"];
 
 ?>
 
-<form action="<?php echo BASE_URL . "module/article/edit.php?id_article=$id_article" ?>" method="POST">
-    <label>Gambar Article</label>
-    <span><input type="text" name="gambar_article" value="<?php echo $gambarArticle; ?>" /></span>
+<form action="<?php echo BASE_URL . "module/article/edit.php?id_article=$id_article" ?>" method="POST" class="mx-20 space-y-4">
+    <div class="flex flex-col">
+        <label class="font-bold mb-1">Gambar Article</label>
+        <input type="text" name="gambar_article" value="<?php echo $gambarArticle; ?>" class="border-2 border-gray-200 p-2 rounded" />
     </div>
 
-    <div class="element-form">
-        <label>Judul Article</label>
-        <span><input type="text" name="judul_article" value="<?php echo $judulArticle; ?>" /></span>
+    <div class="flex flex-col">
+        <label class="font-bold mb-1">Judul Article</label>
+        <input type="text" name="judul_article" value="<?php echo $judulArticle; ?>" class="border-2 border-gray-200 p-2 rounded" />
     </div>
 
-    <div class="element-form">
-        <label>Kategori Article</label>
-        <span><input type="text" name="kategori_article" value="<?php echo $kategoriArticle; ?>" /></span>
+    <div class="flex flex-col">
+        <label class="font-bold mb-1">Kategori Article</label>
+        <input type="text" name="kategori_article" value="<?php echo $kategoriArticle; ?>" class="border-2 border-gray-200 p-2 rounded" />
     </div>
 
-    <div class="element-form">
-        <label>Deskripsi Article</label>
-        <span><input type="text" name="deskripsi_article" value="<?php echo $deskripsiArticle; ?>" /></span>
+    <div class="flex flex-col">
+        <label class="font-bold mb-1">Deskripsi Article</label>
+        <input type="text" name="deskripsi_article" value="<?php echo $deskripsiArticle; ?>" class="border-2 border-gray-200 p-2 rounded" />
     </div>
 
-    <div class="element-form">
-        <label>Author Article</label>
-        <span><input type="text" name="author_article" value="<?php echo $authorArticle; ?>" /></span>
-    </div>
-    <div class="element-form">
-        <label>Status Article</label>
-        <span>
-            <input type="radio" value="on" name="status_article" <?php if ($statusArticle == "on") {
-                                                                        echo "checked";
-                                                                    } ?> /> on
-            <input type="radio" value="off" name="status_article" <?php if ($statusArticle == "off") {
-                                                                        echo "checked";
-                                                                    } ?> /> off
-        </span>
+    <div class="flex flex-col">
+        <label class="font-bold mb-1">Author Article</label>
+        <input type="text" name="author_article" value="<?php echo $authorArticle; ?>" class="border-2 border-gray-200 p-2 rounded" />
     </div>
 
-    <div class="element-form">
-        <span><input type="submit" name="button" value="Update" class="submit-my-profile" /></span>
+    <div class="flex flex-col">
+        <label class="font-bold mb-1">Status Article</label>
+        <div class="flex items-center space-x-2">
+            <label><input type="radio" value="on" name="status_article" <?php if ($statusArticle == "on") {
+                                                                            echo "checked";
+                                                                        } ?> class="mr-1" /> on</label>
+            <label><input type="radio" value="off" name="status_article" <?php if ($statusArticle == "off") {
+                                                                                echo "checked";
+                                                                            } ?> class="mr-1" /> off</label>
+        </div>
+    </div>
+
+    <div class="flex justify-end">
+        <input type="submit" name="button" value="Update" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" />
     </div>
 </form>

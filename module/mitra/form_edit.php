@@ -12,37 +12,38 @@ $rincianHarga = $row["rincian_harga"];
 $phoneMitra = $row["phone_mitra"];
 
 ?>
-<form action="<?php echo BASE_URL . "module/Mitra/edit.php?id_mitra=$id_mitra" ?>" method="POST">
-    <label>Gambar Mitra</label>
-    <span><input type="text" name="gambar_mitra" value="<?php echo $gambarMitra; ?>" /></span>
+<form action="<?php echo BASE_URL . "module/Mitra/edit.php?id_mitra=$id_mitra" ?>" method="POST" class="space-y-4">
+    <div class="flex flex-col">
+        <label class="font-bold mb-1">Gambar Mitra</label>
+        <input type="text" name="gambar_mitra" value="<?php echo $gambarMitra; ?>" class="border-2 border-gray-200 p-2 rounded" />
     </div>
 
-    <div class="element-form">
-        <label>Judul Mitra</label>
-        <span><input type="text" name="nama_mitra" value="<?php echo $namaMitra; ?>" /></span>
+    <div class="flex flex-col">
+        <label class="font-bold mb-1">Judul Mitra</label>
+        <input type="text" name="nama_mitra" value="<?php echo $namaMitra; ?>" class="border-2 border-gray-200 p-2 rounded" />
     </div>
 
-    <div class="element-form">
-        <label>Kategori Mitra</label>
-        <span><input type="text" name="kategori_mitra" value="<?php echo $kategoriMitra; ?>" /></span>
+    <div class="flex flex-col">
+        <label class="font-bold mb-1">Kategori Mitra</label>
+        <input type="text" name="kategori_mitra" value="<?php echo $kategoriMitra; ?>" class="border-2 border-gray-200 p-2 rounded" />
     </div>
 
-    <div class="element-form">
-        <label>Deskripsi Mitra</label>
-        <span><input type="text" name="deskripsi_mitra" value="<?php echo $deskripsiMitra; ?>" /></span>
+    <div class="flex flex-col">
+        <label class="font-bold mb-1">Deskripsi Mitra</label>
+        <input type="text" name="deskripsi_mitra" value="<?php echo $deskripsiMitra; ?>" class="border-2 border-gray-200 p-2 rounded" />
     </div>
 
-    <div class="element-form">
-        <label>Rincian Harga</label>
-        <span><input type="text" name="rincian_harga" value="<?php echo $rincianHarga; ?>" /></span>
+    <div class="flex flex-col">
+        <label class="font-bold mb-1">Rincian Harga</label>
+        <input type="text" name="rincian_harga" value="<?php echo $rincianHarga; ?>" class="border-2 border-gray-200 p-2 rounded" />
     </div>
 
-    <div class="element-form">
-        <label>Phone Mitra</label>
-        <span><input type="text" name="phone_mitra" value="<?php echo $phoneMitra; ?>" /></span>
+    <div class="flex flex-col">
+        <label class="font-bold mb-1">Phone Mitra</label>
+        <input type="text" name="phone_mitra" value="<?php echo $phoneMitra; ?>" class="border-2 border-gray-200 p-2 rounded" />
     </div>
 
-    <div class="element-form">
-        <span><input type="submit" name="button" value="Update" class="submit-my-profile" /></span>
+    <div class="flex justify-end">
+        <input type="submit" name="button" value="Update" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" />
     </div>
 </form>
