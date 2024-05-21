@@ -1,3 +1,7 @@
+<div class="mb-4">
+    <a href="<?php echo BASE_URL . "index.php?page=my_profile&module=mitra&action=form_tambah"; ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">+ Tambah Mitra</a>
+</div>
+
 <?php
 
 $no = 1;
@@ -38,7 +42,6 @@ if (mysqli_num_rows($queryAdmin)  == 0) {
 
         echo "</table>";
     } else {
-        echo "<a class='inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-4 mt-4' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=form_tambah'>Tambah Mitra</a>";
         echo "<table class='mx-4 border-collapse w-full'>";
 
         echo "<tr class='border-b p-1 bg-gray-200'>

@@ -1,7 +1,7 @@
-<form action="<?php echo BASE_URL . "module/article/tambah.php" ?>" method="POST" class="mx-20 flex gap-5 flex-col">
+<form action="<?php echo BASE_URL . "module/article/tambah.php" ?>" method="POST" enctype="multipart/form-data" class="mx-20 flex gap-5 flex-col">
     <div class="flex flex-col">
         <label class="font-bold mb-1">Gambar Article</label>
-        <input type="text" name="gambar_article" class="border-2 border-gray-200 p-2 rounded" />
+        <input type="file" name="gambar_article" class="border-2 border-gray-200 p-2 rounded" />
     </div>
 
     <div class="flex flex-col">

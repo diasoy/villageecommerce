@@ -1,5 +1,5 @@
 <div class="mb-4">
-    <a href="<?php echo BASE_URL."index.php?page=my_profile&module=article&action=form_tambah"; ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">+ Tambah Article</a>
+    <a href="<?php echo BASE_URL . "index.php?page=my_profile&module=article&action=form_tambah"; ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">+ Tambah Article</a>
 </div>
 
 <?php
@@ -30,7 +30,7 @@ if (mysqli_num_rows($queryArticle) == 0) {
         echo "<tr class='hover:bg-gray-100'>
                 <td class='py-4 px-6'>$no</td>
                 <td>$rowArticle[gambar_article]</td>
-                <td>$rowArticle[judul_article]</td>
+                <td class='w-20'>$rowArticle[judul_article]</td>
                 <td>$rowArticle[kategori_article]</td>
                 <td>$rowArticle[deskripsi_article]</td>
                 <td>$rowArticle[author_article]</td>

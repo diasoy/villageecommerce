@@ -25,7 +25,7 @@ $statusUser = $row["status_user"];
 		<label class="font-bold mb-1">Level</label>
 		<div>
 			<label class="inline-flex items-center mr-2">
-				<input type="radio" value="superadmin" name="level_user" class="mr-1" <?php if ($levelUser == "superadmin") {
+				<input type="radio" value="admin" name="level_user" class="mr-1" <?php if ($levelUser == "admin") {
 																							echo "checked";
 																						} ?> />
 				Superadmin

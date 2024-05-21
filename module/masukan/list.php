@@ -1,7 +1,7 @@
 <?php
 $no = 1;
 
-$queryAdmin = mysqli_query($koneksi, "SELECT * FROM masukkan ORDER BY nama_masukkan ASC");
+$queryAdmin = mysqli_query($koneksi, "SELECT * FROM masukan ORDER BY nama_masukan ASC");
 
 if (mysqli_num_rows($queryAdmin) == 0) {
     echo "<h3>Saat ini belum ada data masukkan yang dimasukan</h3>";

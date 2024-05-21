@@ -11,14 +11,15 @@ if (!$result) {
 
 <div class="py-40 mx-40">
     <?php if (mysqli_num_rows($result) > 0) : ?>
-        <?php foreach ($result as $row) : ?>
-            <div class="bg-green-500 p-5 mx-40 rounded-lg shadow-lg py-40">
+        <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+            <div class="">
                 <h1 class="text-2xl font-bold"><?= $row['judul_article']; ?></h1>
+                <img src="assets/images/articles/<?= $row["gambar_article"]; ?>" alt="<?= $row['gambar_article']; ?>" class="w-40 h-40 object-cover rounded-lg">
                 <p class="text-gray-500"><?= $row['kategori_article']; ?></p>
                 <p class="text-gray-500"><?= $row['deskripsi_article']; ?></p>
                 <p class="text-gray-500">Last updated : <?= $row['tanggal_article']; ?></p>
             </div>
-        <?php endforeach; ?>
+        <?php endwhile; ?>
     <?php else : ?>
         <p>No articles found.</p>
     <?php endif; ?>

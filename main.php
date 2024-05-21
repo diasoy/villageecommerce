@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="css/output.css">
 
-<div class="pt-10 flex w-full justify-center items-center h-[100vh]" style="background-image: url('assets/images/hero.jpg')">
+<div class="pt-10 flex w-full justify-center items-center h-[100vh]" style="background-image: url('assets/images/main/hero.jpg')">
     <div class="mx-5">
         <div class="flex flex-col justify-center items-center gap-8">
             <h1 class="font-bold text-white text-5xl drop-shadow-lg"><span class="bg-green-600">Welcome</span> to Village E Commerce</h1>
@@ -14,14 +14,14 @@
         <p class="">Melalui Website ini anda dapat mengetahui UMKM terbaik di Desa ini.</p>
     </div>
     <div class="flex flex-col gap-3">
-        <img src="assets/images/umkm1.jpg" alt="umkm1" class="rounded">
-        <img src="assets/images/umkm2.jpg" alt="umkm2" class="rounded">
+        <img src="assets/images/main/umkm1.jpg" alt="umkm1" class="rounded">
+        <img src="assets/images/main/umkm2.jpg" alt="umkm2" class="rounded">
     </div>
 </div>
 
 <div class="m-4">
     <div class="">
-        <img src="assets/images/kepaladesa.jpg" alt="kepaladesa" class="">
+        <img src="assets/images/main/kepaladesa.jpg" alt="kepaladesa" class="">
     </div>
     <div class="teks-sambutan">
         <h1 class="text-lg font-bold">Sambutan Kepala Desa</h1>

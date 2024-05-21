@@ -1,6 +1,4 @@
 <?php
-include_once("../../function/database.php");
-include_once("../../function/helper.php");
 
 $id_article = $_GET['id_article'];
 

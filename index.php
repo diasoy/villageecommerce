@@ -52,7 +52,7 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
                             <a class='text-sm bg-orange-500 text-white hover:bg-orange-600 hover:duration-500 px-2 py-1 rounded' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=list'>Kontrol</a>
                             <a class='text-sm bg-red-700 text-white px-2 py-1 rounded' href='" . BASE_URL . "index.php?page=logout'>Logout</a>
                         </div>";
-                } else { 
+                } else {
                     echo "<a class='bg-green-600 px-5 py-1 text-sm rounded text-white' href='" . BASE_URL . "index.php?page=login'?>Login</a>
                    <a class='bg-green-100 px-5 py-1 text-sm rounded' href='" . BASE_URL . "index.php?page=register'?>Register</a>";
                 }
