@@ -39,20 +39,20 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
                 <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class="font-bold text-xl">Village E Commerce</a>
             </div>
             <div class="flex gap-10">
-                <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class="text-sm">Home</a>
-                <a href="<?php echo BASE_URL . "index.php?page=article"; ?>" class="text-sm">Article</a>
-                <a href="<?php echo BASE_URL . "index.php?page=documentation"; ?>" class="text-sm">Documentation</a>
-                <a href="<?php echo BASE_URL . "index.php?page=directory"; ?>" class="text-sm">Directory UMKM</a>
+                <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class="text-sm px-3 py-1 hover:bg-green-600 hover:duration-500 hover:text-white hover:rounded ">Home</a>
+                <a href="<?php echo BASE_URL . "index.php?page=article"; ?>" class="text-sm px-3 py-1 hover:bg-green-600 hover:duration-500 hover:text-white hover:rounded ">Article</a>
+                <a href="<?php echo BASE_URL . "index.php?page=documentation"; ?>" class="text-sm px-3 py-1 hover:bg-green-600 hover:duration-500 hover:text-white hover:rounded ">Documentation</a>
+                <a href="<?php echo BASE_URL . "index.php?page=directory"; ?>" class="text-sm px-3 py-1 hover:bg-green-600 hover:duration-500 hover:text-white hover:rounded ">Directory UMKM</a>
             </div>
             <div class="btn-user">
                 <?php
                 if ($id_user) {
                     echo "<div class='flex gap-5 items-center'>
                             <p class='text-sm' style='color: black; cursor:default;'>Selamat datang, <b>$nama</b></p>
-                            <a class='text-sm bg-slate-400 px-2 py-1 rounded' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=list'>Kontrol</a>
+                            <a class='text-sm bg-orange-500 text-white hover:bg-orange-600 hover:duration-500 px-2 py-1 rounded' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=list'>Kontrol</a>
                             <a class='text-sm bg-red-700 text-white px-2 py-1 rounded' href='" . BASE_URL . "index.php?page=logout'>Logout</a>
                         </div>";
-                } else {
+                } else { 
                     echo "<a class='bg-green-600 px-5 py-1 text-sm rounded text-white' href='" . BASE_URL . "index.php?page=login'?>Login</a>
                    <a class='bg-green-100 px-5 py-1 text-sm rounded' href='" . BASE_URL . "index.php?page=register'?>Register</a>";
                 }

@@ -2,12 +2,13 @@
 
 $id_mitra = $_GET["id_mitra"];
 
-$query = mysqli_query($koneksi, "SELECT status_mitra FROM mitra WHERE id_mitra='$id_mitra'");
+$query = mysqli_query($koneksi, "SELECT * FROM mitra WHERE id_mitra='$id_mitra'");
 $row = mysqli_fetch_assoc($query);
+
 $statusMitra = $row['status_mitra'];
 
 ?>
-<form action="<?php echo BASE_URL . "module/mitra/edit.php?id_mitra=$id_mitra"; ?>" method="POST" class="space-y-4 mx-20">
+<form action="<?php echo BASE_URL . "module/mitra/edit_status.php?id_mitra=$id_mitra"; ?>" method="POST" class="space-y-4 mx-20">
 
     <div class="flex flex-col">
         <label class="font-bold mb-1">Id Mitra</label>
@@ -17,16 +18,8 @@ $statusMitra = $row['status_mitra'];
     <div class="flex flex-col">
         <label class="font-bold mb-1">Status</label>
         <select name="status" class="border-2 border-gray-200 p-2 rounded">
-            <?php
-            foreach ($arrayStatusMitra AS $key => $value) {
-                if ($statusMitra == $key) {
-                    echo "<option value='$key' selected='true'>$value</option>";
-                } else {
-                    echo "<option value='$key'>$value</option>";
-                }
-            }
-
-            ?>
+            <option value="on" <?php if ($statusMitra == "on") { echo "selected"; } ?>>On</option>
+            <option value="off" <?php if ($statusMitra == "off") { echo "selected"; } ?>>Off</option>
         </select>
     </div>
 

@@ -23,23 +23,21 @@ if (mysqli_num_rows($queryAdmin)  == 0) {
 
         while ($rowUser = mysqli_fetch_array($queryAdmin)) {
             echo "<tr class='border-b p-1'>
-                        <td class='w-1/12 text-center py-3'>$no</td>
-                        <td class='w-2/12 py-3'>$rowUser[id_user]</td>
-                        <td class='w-2/12 py-3'>$rowUser[nama_mitra]</td>
-                        <td class='w-2/12 py-3'>$rowUser[kategori_mitra]</td>
-                        <td class='w-2/12 text-center py-3'>$rowUser[status_mitra]</td>
-                        <td class='w-2/12 text-center py-3'>
-                            <a class='inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=status&id_mitra=$rowUser[id_mitra]" . "'>Edit</a>
-                            <a class='inline-block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=hapus&id_mitra=$rowUser[id_mitra]" . "'>Delete</a>
-                        </td>
-                     </tr>";
-
+                                <td class='w-1/12 text-center py-3'>$no</td>
+                                <td class='w-2/12 py-3'>$rowUser[id_user]</td>
+                                <td class='w-2/12 py-3'>$rowUser[nama_mitra]</td>
+                                <td class='w-2/12 py-3'>$rowUser[kategori_mitra]</td>
+                                <td class='w-2/12 text-center py-3'>$rowUser[status_mitra]</td>
+                                <td class='w-2/12 text-center py-3'>
+                                    <a class='inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=status&id_mitra=$rowUser[id_mitra]" . "'>Edit Status</a>
+                                    <a class='inline-block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=hapus&id_mitra=$rowUser[id_mitra]" . "'>Delete</a>
+                                </td>
+                             </tr>";
             $no++;
         }
 
         echo "</table>";
     } else {
-        $status = $rowUser['status_mitra'];
         echo "<a class='inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-4 mt-4' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=form_tambah'>Tambah Mitra</a>";
         echo "<table class='mx-4 border-collapse w-full'>";
 
@@ -62,7 +60,7 @@ if (mysqli_num_rows($queryAdmin)  == 0) {
                         <td class='w-2/12 py-3'>$rowUser[deskripsi_mitra]</td>
                         <td class='w-2/12 py-3'>$rowUser[rincian_harga]</td>
                         <td class='w-2/12 py-3'>$rowUser[phone_mitra]</td>
-                        <td class='w-2/12 text-center py-3'>$rowUser[$status]</td>
+                        <td class='w-2/12 text-center py-3'>$rowUser[status_mitra]</td>
                         <td class='w-2/12 text-center py-3'>
                             <a class='inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=form_edit&id_mitra=$rowUser[id_mitra]" . "'>Edit</a>
                             <a class='inline-block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=hapus&id_mitra=$rowUser[id_mitra]" . "'>Delete</a>

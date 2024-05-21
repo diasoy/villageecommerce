@@ -34,6 +34,6 @@ if (mysqli_num_rows($queryAdmin) == 0) {
         $no++;
     }
 
-    //AKHIR DARI TABLE
+    //AKHIR DARI TBLE
     echo "</table>";
 }

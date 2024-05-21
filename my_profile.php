@@ -13,7 +13,7 @@ if ($id_user) {
     <?php
     if ($level == "admin") {
     ?>
-        <ul class="bg-green-600 flex ml-10 w-1/5 flex-col gap-4 p-4 text-white">
+        <ul class="flex mx-4 rounded-lg shadow-lg w-1/5 flex-col gap-4 p-4 bg-emerald-400 text-white">
             <li class="w-full">
                 <a <?php if ($module == "article") {
                         echo "class='w-full text-white bg-orange-500 hover:bg-orange-400 '";
