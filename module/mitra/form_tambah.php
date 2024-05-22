@@ -1,8 +1,8 @@
 <h1 class="text-2xl text-center font-bold mb-4">Tambah Mitra Baru</h1>
-<form action="<?php echo BASE_URL . "module/mitra/tambah.php" ?>" method="post" class="space-y-4">
+<form action="<?php echo BASE_URL . "module/mitra/tambah.php" ?>" enctype="multipart/form-data" method="post" class="space-y-4">
     <div class="flex flex-col">
         <label class="font-bold mb-1">Gambar</label>
-        <input type="text" name="gambar_mitra" class="border-2 border-gray-200 p-2 rounded" />
+        <input type="file" name="gambar_mitra" class="border-2 border-gray-200 p-2 rounded" />
     </div>
     <div class="flex flex-col">
         <label class="font-bold mb-1">Nama Mitra</label>

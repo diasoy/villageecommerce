@@ -1,7 +1,5 @@
 <?php
-include_once("function/database.php");
-
-$query = "SELECT * FROM mitra";
+$query = "SELECT * FROM mitra WHERE status_mitra = 'on' ORDER BY id_mitra DESC";
 $result = mysqli_query($koneksi, $query);
 
 if (!$result) {
@@ -9,17 +7,23 @@ if (!$result) {
 }
 ?>
 
-<div class="py-40 mx-40">
-    <?php if (mysqli_num_rows($result) > 0) : ?>
-        <?php foreach ($result as $row) : ?>
-            <div class="bg-green-500 p-5 mx-40 rounded-lg shadow-lg py-40">
-                <h1 class="text-2xl font-bold"><?= $row['nama_mitra']; ?></h1>
-                <p class="text-gray-500"><?= $row['kategori_mitra']; ?></p>
-                <p class="text-gray-500"><?= $row['deskripsi_mitra']; ?></p>
-                <p class="text-gray-500">Kisaran harga : <?= $row['rincian_harga']; ?></p>
-            </div>
-        <?php endforeach; ?>
-    <?php else : ?>
-        <p>No Mitra found.</p>
-    <?php endif; ?>
+<div class="mx-20 py-20">
+    <h1 class="font-bold text-3xl my-5">Daftar Mitra Teratas</h1>
+    <div class="grid grid-cols-4 gap-4">
+        <?php if (mysqli_num_rows($result) > 0) : ?>
+            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                <div class="border rounded-lg shadow hover:shadow-lg hover:duration-500">
+                    <a href="<?= BASE_URL . "index.php?page=detail_mitra&id_mitra=" . $row['id_mitra']; ?>">
+                        <img src="<?= IMAGE_MITRA . $row["gambar_mitra"]; ?>" alt="<?= $row['gambar_mitra']; ?>" class="w-full h-60 object-cover rounded-t-lg">
+                        <div class="flex flex-col py-5 mx-4">
+                            <h1 class="text-lg font-bold"><?= $row['nama_mitra']; ?></h1>
+                            <p class="text-gray-500"><?= $row['kategori_mitra']; ?></p>
+                        </div>
+                    </a>
+                </div>
+            <?php endwhile; ?>
+        <?php else : ?>
+            <p>No articles found.</p>
+        <?php endif; ?>
+    </div>
 </div>

@@ -12,10 +12,13 @@ $rincianHarga = $row["rincian_harga"];
 $phoneMitra = $row["phone_mitra"];
 
 ?>
-<form action="<?php echo BASE_URL . "module/Mitra/edit.php?id_mitra=$id_mitra" ?>" method="POST" class="space-y-4">
+<form action="<?php echo BASE_URL . "module/mitra/edit.php?id_mitra=$id_mitra" ?>" method="POST" class="space-y-4" enctype="multipart/form-data">
+
     <div class="flex flex-col">
         <label class="font-bold mb-1">Gambar Mitra</label>
-        <input type="text" name="gambar_mitra" value="<?php echo $gambarMitra; ?>" class="border-2 border-gray-200 p-2 rounded" />
+        <img src="<?= IMAGE_MITRA .  $gambarMitra ?>" class="w-20 h-20 object-cover rounded" />
+        <input type="file" name="gambar_mitra" class="border-2 border-gray-200 p-2 rounded" />
+        <input type="hidden" name="gambarLama" value="<?= $gambarMitra ?>">
     </div>
 
     <div class="flex flex-col">

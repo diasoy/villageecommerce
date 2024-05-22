@@ -14,11 +14,11 @@ $statusArticle = $row["status_article"];
 ?>
 
 <form action="<?php echo BASE_URL . "module/article/edit.php?id_article=$id_article" ?>" method="POST" class="mx-20 space-y-4" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?= $row['id_article'] ?>">
-    <input type="hidden" name="gambarLama" value="<?= $row['gambar_article'] ?>">
+    
+    
     <div class="flex flex-col">
         <label class="font-bold mb-1">Gambar Article</label>
-        <img src="../../assets/images/articles/<?= $gambarArticle ?>" class="w-20 h-20 object-cover rounded" />
+        <img src="<?= IMAGE_ARTICLES .  $gambarArticle ?>" class="w-20 h-20 object-cover rounded" />
         <input type="file" name="gambar_article" value="<?= $gambarArticle ?>" class="border-2 border-gray-200 p-2 rounded" />
     </div>
 

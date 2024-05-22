@@ -13,47 +13,47 @@ if ($id_user) {
     <?php
     if ($level == "admin") {
     ?>
-        <ul class="flex mx-4 rounded-lg shadow-lg w-1/5 flex-col gap-4 p-4 bg-emerald-400 text-white">
-            <li class="w-full">
+        <div class="flex flex-col justify-between gap-10 mx-4 rounded-lg border shadow w-1/5 px-8 py-4">
+            <div class="flex  flex-col gap-5">
                 <a <?php if ($module == "article") {
-                        echo "class='w-full text-white bg-orange-500 hover:bg-orange-400 '";
+                        echo "class='bg-green-500 text-white py-2 px-5 rounded'";
                     } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=article&action=list"; ?>">Article</a>
-            </li>
-            <li class="w-full">
                 <a <?php if ($module == "directory") {
-                        echo "class='w-full text-white bg-orange-500 hover:bg-orange-400 '";
+                        echo "class='bg-green-500 text-white py-2 px-5 rounded'";
                     } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=directory&action=list"; ?>">Directory</a>
-            </li>
-            <li class="w-full">
                 <a <?php if ($module == "mitra") {
-                        echo "class='w-full text-white bg-orange-500 hover:bg-orange-400 '";
+                        echo "class='bg-green-500 text-white py-2 px-5 rounded'";
                     } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=mitra&action=list"; ?>">Mitra</a>
-            </li>
-            <li class="w-full">
                 <a <?php if ($module == "user") {
-                        echo "class='w-full text-white bg-orange-500 hover:bg-orange-400 '";
+                        echo "class='bg-green-500 text-white py-2 px-5 rounded'";
                     } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=user&action=list"; ?>">User</a>
-            </li>
-            <li class="w-full">
                 <a <?php if ($module == "masukan") {
-                        echo "class='w-full text-white bg-orange-500 hover:bg-orange-400 '";
+                        echo "class='bg-green-500 text-white py-2 px-5 rounded'";
                     } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=masukan&action=list"; ?>">Masukan</a>
-            </li>
-        </ul>
+                <a <?php if ($module == "laporan") {
+                        echo "class='bg-green-500 text-white py-2 px-5 rounded'";
+                    } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=laporan&action=list"; ?>">laporan</a>
+            </div>
+            <div>
+                <a class='text-sm bg-red-700 text-white px-4 py-2 mb-2 rounded' href='<?= BASE_URL . "index.php?page=logout" ?>'>Logout</a>
+            </div>
+
+        </div>
 
     <?php
     } else {
     ?>
-        <div class="flex w-1/5">
-            <div>
+        <div class="flex flex-col justify-between gap-10 mx-4 rounded-lg border shadow w-1/5 px-8 py-4">
+            <div class="flex  flex-col gap-5">
                 <a <?php if ($module == "mitra") {
-                        echo "class='active'";
+                        echo "class='bg-green-500 text-white py-2 px-5 rounded'";
                     } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=mitra&action=list"; ?>">Mitra</a>
+                <a <?php if ($module == "laporan") {
+                        echo "class='bg-green-500 text-white py-2 px-5 rounded'";
+                    } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=laporan&action=list"; ?>">Laporan</a>
             </div>
             <div>
-                <a <?php if ($module == "laporan") {
-                        echo "class='active'";
-                    } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=laporan&action=list"; ?>">Laporan</a>
+                <a class='text-sm bg-red-700 text-white px-4 py-2 mb-2 rounded' href='<?= BASE_URL . "index.php?page=logout" ?>'>Logout</a>
             </div>
         </div>
     <?php  } ?>

@@ -1,6 +1,4 @@
 <?php
-include_once("function/database.php");
-
 $query = "SELECT * FROM article WHERE status_article = 'on' ORDER BY id_article DESC";
 $result = mysqli_query($koneksi, $query);
 
@@ -9,18 +7,25 @@ if (!$result) {
 }
 ?>
 
-<div class="py-40 mx-40">
-    <?php if (mysqli_num_rows($result) > 0) : ?>
-        <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-            <div class="">
-                <h1 class="text-2xl font-bold"><?= $row['judul_article']; ?></h1>
-                <img src="assets/images/articles/<?= $row["gambar_article"]; ?>" alt="<?= $row['gambar_article']; ?>" class="w-40 h-40 object-cover rounded-lg">
-                <p class="text-gray-500"><?= $row['kategori_article']; ?></p>
-                <p class="text-gray-500"><?= $row['deskripsi_article']; ?></p>
-                <p class="text-gray-500">Last updated : <?= $row['tanggal_article']; ?></p>
-            </div>
-        <?php endwhile; ?>
-    <?php else : ?>
-        <p>No articles found.</p>
-    <?php endif; ?>
+<div class="mx-20 py-20">
+    <h1 class="font-bold text-3xl my-5">Daftar Article Teratas</h1>
+    <div class="grid grid-cols-4 gap-4">
+        <?php if (mysqli_num_rows($result) > 0) : ?>
+            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                <div class="border rounded-lg shadow hover:shadow-lg hover:duration-500">
+                    <a href="<?= BASE_URL . "index.php?page=detail_article&id_article=" . $row['id_article']; ?>">
+                        <img src="<?= IMAGE_ARTICLES . $row["gambar_article"]; ?>" alt="<?= $row['gambar_article']; ?>" class="w-full h-60 object-cover rounded-t-lg">
+                        <div class="flex flex-col py-5 mx-4">
+                            <h1 class="text-lg font-bold"><?= $row['judul_article']; ?></h1>
+                            <p class="text-gray-500"><?= $row['kategori_article']; ?></p>
+                            <p class="text-gray-500">Last updated : <?= $row['tanggal_article']; ?></p>
+                            <p class="text-gray-400 mt-4">Dilihat <?= $row['kunjungan_article'] ?> kali</p>
+                        </div>
+                    </a>
+                </div>
+            <?php endwhile; ?>
+        <?php else : ?>
+            <p>No articles found.</p>
+        <?php endif; ?>
+    </div>
 </div>

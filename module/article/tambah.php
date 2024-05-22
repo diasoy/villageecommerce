@@ -10,7 +10,7 @@ $authorArticle = $_POST["author_article"];
 $statusArticle = $_POST["status_article"];
 
 if (isset($_FILES['gambar_article']) && $_FILES['gambar_article']['error'] === 0) {
-    $gambarArticle = uploadImage($_FILES['gambar_article']);
+    $gambarArticle = uploadImageArticle($_FILES['gambar_article']);
     if (!$gambarArticle) {
         echo "Failed to upload image";
         exit;
