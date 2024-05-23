@@ -1,5 +1,10 @@
 <?php
-$queryMitra = mysqli_query($koneksi, "SELECT nama_mitra, kunjungan_mitra FROM mitra");
+if ($level == 'admin') {
+    $queryMitra = mysqli_query($koneksi, "SELECT nama_mitra, kunjungan_mitra FROM mitra");
+} else if ($level == 'customer') {
+    $queryMitra = mysqli_query($koneksi, "SELECT nama_mitra, kunjungan_mitra FROM mitra WHERE id_user = '$id_user'");
+}
+
 $queryArticle = mysqli_query($koneksi, "SELECT judul_article, kunjungan_article FROM article");
 
 $mitraData = [];
@@ -50,25 +55,27 @@ $articleValues = array_column($articleData, 'kunjungan_article');
         }
     });
 
-    var ctxArticle = document.getElementById('articleChart').getContext('2d');
-    var myChartArticle = new Chart(ctxArticle, {
-        type: 'bar',
-        data: {
-            labels: <?php echo json_encode($articleLabels); ?>,
-            datasets: [{
-                label: 'Kunjungan Article',
-                data: <?php echo json_encode($articleValues); ?>,
-                backgroundColor: 'rgba(153, 102, 255, 1)',
-                borderColor: 'rgba(153, 102, 255, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+    if ('<?php echo $level; ?>' == 'admin') {
+        var ctxArticle = document.getElementById('articleChart').getContext('2d');
+        var myChartArticle = new Chart(ctxArticle, {
+            type: 'bar',
+            data: {
+                labels: <?php echo json_encode($articleLabels); ?>,
+                datasets: [{
+                    label: 'Kunjungan Article',
+                    data: <?php echo json_encode($articleValues); ?>,
+                    backgroundColor: 'rgba(153, 102, 255, 1)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
+        });
+    }
 </script>

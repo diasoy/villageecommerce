@@ -25,8 +25,8 @@ if (!$result) {
                         <div class="flex flex-col py-5 mx-4">
                             <h1 class="text-lg font-bold"><?= $row['nama_mitra']; ?></h1>
                             <p class="text-gray-500"><?= $row['kategori_mitra']; ?></p>
-                            <p class="text-gray-500">Last updated : <?= $row['rincian_harga']; ?></p>
-                            <p class="text-gray-400 mt-4">Dilihat <?= $row['kunjungan_mitra'] ?> kali</p>
+                            <p class="text-gray-500">Rincian Harga : <?= $row['rincian_harga']; ?></p>
+                            <p class="text-gray-400 mt-4 text-xs">Dilihat <?= $row['kunjungan_mitra'] ?> kali</p>
                         </div>
                     </a>
                 </div>
