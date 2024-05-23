@@ -48,11 +48,11 @@
             echo "<tr class='border-b p-1 bg-gray-200'>
                     <th class='w-1/12 text-center py-2'>No</th>
                     <th class='w-2/12 py-2'>Nama</th>
-                    <th class='w-2/12 py-2'>Kategori</th>
+                    <th class='w-1/12 py-2'>Kategori</th>
                     <th class='w-2/12 py-2'>Deskripsi</th>
                     <th class='w-2/12 py-2'>Rincian Harga</th>
-                    <th class='w-2/12 py-2'>Contact</th>
-                    <th class='w-2/12 text-center py-2'>Status</th>
+                    <th class='w-1/12 py-2'>Contact</th>
+                    <th class='w-1/12 text-center py-2'>Status</th>
                     <th class='w-2/12 text-center py-2'>Action</th>
                  </tr>";
 
@@ -60,11 +60,11 @@
                 echo "<tr class='border-b p-1'>
                         <td class='w-1/12 text-center py-3'>$no</td>
                         <td class='w-2/12 py-3'>$row[nama_mitra]</td>
-                        <td class='w-2/12 py-3'>$row[kategori_mitra]</td>
+                        <td class='w-1/12 py-3'>$row[kategori_mitra]</td>
                         <td class='w-2/12 py-3'>$row[deskripsi_mitra]</td>
                         <td class='w-2/12 py-3'>$row[rincian_harga]</td>
-                        <td class='w-2/12 py-3'>$row[phone_mitra]</td>
-                        <td class='w-2/12 text-center py-3'>$row[status_mitra]</td>
+                        <td class='w-1/12 py-3'>$row[phone_mitra]</td>
+                        <td class='w-1/12 text-center py-3'>$row[status_mitra]</td>
                         <td class='w-2/12 text-center py-3'>
                             <a class='inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=form_edit&id_mitra=$row[id_mitra]" . "'>Edit</a>
                             <a class='inline-block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' href='" . BASE_URL . "index.php?page=my_profile&module=mitra&action=hapus&id_mitra=$row[id_mitra]" . "'>Delete</a>

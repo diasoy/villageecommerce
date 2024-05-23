@@ -15,16 +15,16 @@ $statusArticle = $row["status_article"];
 ?>
 
 <div class="w-full p-20 flex flex-col justify-center items-center">
-            <div>
-                <h1 class="font-bold pb-20 text-5xl"><?= $judulArticle ?></h1>
-            </div>
-            <div>
-                <img src="<?= IMAGE_ARTICLES .  $gambarArticle ?>" class="rounded-3xl">
-            </div>
-            <div class="flex flex-col my-4">
-                <p class="opacity-40">Author : <?= $authorArticle ?></p>
-                <p class="font-semibold my-10"><?= $kategoriArticle ?></p>
-                <p class="text-justify"><?= $deskripsiArticle ?></p>
-                <p class="mt-5">Last updated : <?= $tanggalArticle ?></p>
+    <div>
+        <h1 class="font-bold pb-20 text-5xl"><?= $judulArticle ?></h1>
+    </div>
+    <div>
+        <img src="<?= IMAGE_ARTICLES .  $gambarArticle ?>" class="rounded-3xl">
+    </div>
+    <div class="flex flex-col my-4">
+        <p class="opacity-40">Author : <?= $authorArticle ?></p>
+        <p class="font-semibold my-10"><?= $kategoriArticle ?></p>
+        <p class="text-justify"><?= $deskripsiArticle ?></p>
+        <p class="mt-5">Last updated : <?= $tanggalArticle ?></p>
     </div>
 </div>

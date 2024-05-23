@@ -32,7 +32,7 @@ if ($id_user) {
                     } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=masukan&action=list"; ?>">Masukan</a>
                 <a <?php if ($module == "laporan") {
                         echo "class='bg-green-500 text-white py-2 px-5 rounded'";
-                    } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=laporan&action=list"; ?>">laporan</a>
+                    } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=laporan&action=list"; ?>">Laporan</a>
             </div>
             <div>
                 <a class='text-sm bg-red-700 text-white px-4 py-2 mb-2 rounded' href='<?= BASE_URL . "index.php?page=logout" ?>'>Logout</a>

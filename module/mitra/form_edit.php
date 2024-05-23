@@ -33,7 +33,7 @@ $phoneMitra = $row["phone_mitra"];
 
     <div class="flex flex-col">
         <label class="font-bold mb-1">Deskripsi Mitra</label>
-        <input type="text" name="deskripsi_mitra" value="<?php echo $deskripsiMitra; ?>" class="border-2 border-gray-200 p-2 rounded" />
+        <textarea type="text" name="deskripsi_mitra" value="<?php echo $deskripsiMitra; ?>" class="border-2 border-gray-200 p-2 rounded"></textarea>
     </div>
 
     <div class="flex flex-col">
