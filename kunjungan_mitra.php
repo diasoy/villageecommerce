@@ -1,6 +1,4 @@
 <?php
-include("../../function/database.php");
-include("../../function/helper.php");
 
 $id_mitra = $_GET['id_mitra'];
 

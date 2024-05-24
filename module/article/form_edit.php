@@ -14,8 +14,6 @@ $statusArticle = $row["status_article"];
 ?>
 
 <form action="<?php echo BASE_URL . "module/article/edit.php?id_article=$id_article" ?>" method="POST" class="mx-20 space-y-4" enctype="multipart/form-data">
-    
-    
     <div class="flex flex-col">
         <label class="font-bold mb-1">Gambar Article</label>
         <img src="<?= IMAGE_ARTICLES .  $gambarArticle ?>" class="w-20 h-20 object-cover rounded" />
