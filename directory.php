@@ -14,9 +14,9 @@ if (!$result) {
 
 ?>
 
-<div class="px-56 py-20 bg-gradient-to-b from-indigo-900 via-violet-600 to-violet-600">
+<div class="lg:px-36 xl:px-56 px-6 md:px-28 py-20 bg-gradient-to-b from-indigo-900 via-violet-600 to-violet-600">
     <h1 class="font-bold text-3xl my-5 text-white">Daftar Mitra Teratas</h1>
-    <div class="grid grid-cols-4 gap-4 ">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 ">
         <?php if (mysqli_num_rows($result) > 0) : ?>
             <?php while ($row = mysqli_fetch_assoc($result)) : ?>
                 <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl hover:shadow-indigo-100 hover:duration-500">

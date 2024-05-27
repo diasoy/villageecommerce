@@ -10,6 +10,7 @@ if ($id_user) {
 
 ?>
 <div class="flex w-full justify-center items-start py-20">
+    
     <?php
     if ($level == "admin") {
     ?>
