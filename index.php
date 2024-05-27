@@ -51,7 +51,11 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
             <div class="flex lg:flex-1">
                 <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class="-m-1.5 p-1.5 flex items-center gap-x-4">
                     <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Logo">
-                    <span class="font-bold">Village E Commerce</span>
+                    <div class="flex flex-col text-xs">
+                        <h1 class="">Desa Genaharjo</h1>
+                        <h1 class="font-semibold">Kecamatan Semanding</h1>
+                        <h1 class="font-bold">Kabupaten Tuban</h1>
+                    </div>
                 </a>
             </div>
             <div class="flex lg:hidden">
@@ -61,10 +65,11 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
                     </svg>
                 </button>
             </div>
-            <div class="hidden lg:flex lg:gap-x-6">
+            <div class="hidden lg:flex lg:gap-x-2">
                 <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class="text-sm font-semibold leading-6 text-gray-900 px-3 py-1 hover:bg-[#4F46E5] hover:text-white hover:rounded hover:duration-500">Home</a>
+                <a href="<?php echo BASE_URL . "index.php?page=about"; ?>" class="text-sm font-semibold leading-6 text-gray-900 px-3 py-1 hover:bg-[#4F46E5] hover:text-white hover:rounded hover:duration-500">About</a>
+                <a href="<?php echo BASE_URL . "index.php?page=profile"; ?>" class="text-sm font-semibold leading-6 text-gray-900 px-3 py-1 hover:bg-[#4F46E5] hover:text-white hover:rounded hover:duration-500">Profile Desa</a>
                 <a href="<?php echo BASE_URL . "index.php?page=article"; ?>" class="text-sm font-semibold leading-6 text-gray-900 px-3 py-1 hover:bg-[#4F46E5] hover:text-white hover:rounded hover:duration-500">Article</a>
-                <a href="<?php echo BASE_URL . "index.php?page=documentation"; ?>" class="text-sm font-semibold leading-6 text-gray-900 px-3 py-1 hover:bg-[#4F46E5] hover:text-white hover:rounded hover:duration-500">Documentation</a>
                 <a href="<?php echo BASE_URL . "index.php?page=directory"; ?>" class="text-sm font-semibold leading-6 text-gray-900 px-3 py-1 hover:bg-[#4F46E5] hover:text-white hover:rounded hover:duration-500">Directory UMKM</a>
             </div>
             <div class="hidden lg:flex lg:flex-1 items-start lg:justify-end">
@@ -82,15 +87,17 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
             </div>
         </div>
 
-        <!-- Mobile menu, show/hide based on menu open state. -->
         <div id="mobile-menu" class="hidden lg:hidden" role="dialog" aria-modal="true">
-            <!-- Background backdrop, show/hide based on slide-over state. -->
             <div class="fixed inset-0 z-10"></div>
             <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                 <div class="flex items-center justify-between">
                     <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class="-m-1.5 p-1.5 flex items-center gap-x-4">
                         <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Logo">
-                        <span class="font-bold">Village E Commerce</span>
+                        <div class="flex flex-col text-xs">
+                            <span class="">Desa Genaharjo</span>
+                            <span class="font-semibold">Kecamatan Semanding</span>
+                            <span class="font-bold">Kabupaten Tuban</span>
+                        </div>
                     </a>
                     <button id="close-menu-button" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
                         <span class="sr-only">Close menu</span>
@@ -103,8 +110,9 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
                     <div class="-my-6 divide-y divide-gray-500/10">
                         <div class="space-y-2 py-6">
                             <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
+                            <a href="<?php echo BASE_URL . "index.php?page=about"; ?>" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About</a>
+                            <a href="<?php echo BASE_URL . "index.php?page=profil"; ?>" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Profile Desa</a>
                             <a href="<?php echo BASE_URL . "index.php?page=article"; ?>" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Article</a>
-                            <a href="<?php echo BASE_URL . "index.php?page=documentation"; ?>" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Documentation</a>
                             <a href="<?php echo BASE_URL . "index.php?page=directory"; ?>" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Directory UMKM</a>
                         </div>
                         <div class="py-6">
@@ -124,7 +132,7 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
         </div>
     </nav>
 
-    <div id="content">
+    <div id="content" class="bg-gradient-to-tr from-indigo-200 via-indigo-50 to-indigo-100">
         <?php
         $filename = "$page.php";
         if (file_exists($filename)) {
@@ -135,6 +143,49 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
         ?>
     </div>
 
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center flex-wrap">
+                <!-- About Section -->
+                <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                    <h2 class="text-xl font-bold mb-4">Tentang Kami</h2>
+                    <p>Village E Commerce adalah platform untuk menemukan produk-produk UMKM terbaik dari desa kami. Kami berkomitmen untuk mendukung pengembangan usaha kecil dan menengah di desa.</p>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="w-full md:w-1/3 my-6 md:mb-0">
+                    <h2 class="text-xl font-bold mb-4">Tautan Cepat</h2>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:underline">Beranda</a></li>
+                        <li><a href="#umkm" class="hover:underline">UMKM</a></li>
+                        <li><a href="#news" class="hover:underline">Berita</a></li>
+                        <li><a href="#contact" class="hover:underline">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="w-full md:w-1/3">
+                    <h2 class="text-xl font-bold mb-4">Kontak Kami</h2>
+                    <p>Jl. Desa No. 123, Kecamatan, Kota, Provinsi</p>
+                    <p>Email: info@village-ecommerce.com</p>
+                    <p>Telepon: +62 812-3456-7890</p>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="mt-8 flex justify-center space-x-6">
+                <a href="#" class="text-white hover:text-green-500"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white hover:text-green-500"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:text-green-500"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white hover:text-green-500"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-8 text-center">
+                <p>&copy; 2024 Village E Commerce. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
     <script>
         document.getElementById('open-menu-button').addEventListener('click', function() {
             document.getElementById('mobile-menu').classList.remove('hidden');

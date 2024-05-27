@@ -1,8 +1,8 @@
 <?php
 
-define("BASE_URL", "http://localhost/pemweb/villageecommerce/");
-define("IMAGE_ARTICLES", "http://localhost/pemweb/villageecommerce/assets/images/articles/");
-define("IMAGE_MITRA", "http://localhost/pemweb/villageecommerce/assets/images/mitra/");
+define("BASE_URL", "http://localhost/villageecommerce/");
+define("IMAGE_ARTICLES", "http://localhost/villageecommerce/assets/images/articles/");
+define("IMAGE_MITRA", "http://localhost/villageecommerce/assets/images/mitra/");
 
 function rupiah($nilai = 0)
 {

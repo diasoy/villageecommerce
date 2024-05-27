@@ -23,7 +23,7 @@ if ($id_user) {
             echo "<div class='bg-red-500 text-white py-2 px-3 w-full my-3 rounded'>Maaf, email yang kamu masukan sudah terdaftar</div>";
         }
         ?>
-        <h1 class="py-10 font-bold text-lg">Register account</h1>
+        <h1 class="pb-10 font-bold text-lg">Register account</h1>
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2">Nama Lengkap</label>
             <input type="text" name="nama_user" value="<?php echo $nama_lengkap; ?>" class="ring-green-600 ring-1 rounded w-full py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline" />
