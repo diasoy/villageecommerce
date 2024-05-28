@@ -5,7 +5,7 @@ $queryArticle = mysqli_query($koneksi, "SELECT * FROM article ORDER BY kunjungan
 $queryMitra = mysqli_query($koneksi, "SELECT * FROM mitra ORDER BY id_mitra DESC LIMIT 4");
 
 ?>
-
+<!-- Hero  -->
 <div class="pt-10 flex w-full justify-center items-center h-[100vh]" style="background-image: url('assets/images/main/hero.jpg')">
     <div class="mx-5">
         <div class="flex flex-col justify-center items-center gap-8">
@@ -14,11 +14,13 @@ $queryMitra = mysqli_query($koneksi, "SELECT * FROM mitra ORDER BY id_mitra DESC
         </div>
     </div>
 </div>
+<!-- Hero End  -->
 
-<div class="lg:mx-40 lg:my-44 my-8 mx-4">
+<!-- Tentang Kami  -->
+<div class="lg:mx-20 xl:mx-40 md:mx-12 lg:my-40 my-8 mx-4">
     <div class="mb-4">
         <h2 class="font-bold text-4xl text-center text-indigo-800"><span class="font-bold bg-indigo-600 text-white">Tentang</span> Kami</h2>
-        <div class="flex flex-col-reverse gap-4 my-8 justify-center items-center">
+        <div class="flex lg:flex-row flex-col-reverse gap-4 my-8 justify-center items-center">
             <div>
                 <p class="mb-4 text-indigo-900 text-justify"><span class="font-bold bg-indigo-600 text-white">Selamat datang</span>, ini adalah sebuah platform unggulan yang didedikasikan untuk mengangkat potensi desa-desa di seluruh Indonesia. Melalui website ini, Anda dapat menjelajahi berbagai informasi tentang desa-desa, mulai dari profil dan sejarah, hingga potensi wisata dan budaya. Kami juga berkomitmen untuk mempromosikan UMKM (Usaha Mikro, Kecil, dan Menengah) yang ada di desa-desa, memberikan mereka panggung untuk tumbuh dan berkembang. Selain itu, kami menyediakan berbagai artikel inspiratif dan informatif seputar pengembangan desa dan UMKM, untuk membantu memberdayakan masyarakat dan memperkuat ekonomi lokal. Bergabunglah dengan kami dalam perjalanan ini untuk mengenal dan mendukung desa-desa kita lebih dekat.
                 </p>
@@ -28,16 +30,18 @@ $queryMitra = mysqli_query($koneksi, "SELECT * FROM mitra ORDER BY id_mitra DESC
         </div>
     </div>
 </div>
+<!-- Tentang Kami End  -->
 
-<div class="lg:mx-40 lg:my-20 my-10 mx-4">
+<!-- Profil Desa -->
+<div class="lg:mx-40 lg:my-40 my-8 mx-4">
     <div class="mb-4">
-        <h1 class="font-bold text-4xl text-center text-indigo-800 my-4"><span class="font-bold bg-indigo-600 text-white">Profil</span> Desa Genaharjo</h1>
-        <div class="flex flex-col gap-4 justify-center items-center">
-            <div class="flex flex-col gap-4">
+        <h1 class="font-bold text-4xl text-center text-indigo-800 my-10"><span class="font-bold bg-indigo-600 text-white">Profil</span> Desa Genaharjo</h1>
+        <div class="flex lg:flex-row flex-col gap-4 justify-center items-center">
+            <div class="flex flex-col lg:w-1/2 gap-4">
                 <img src="./assets/images/main/profil1.jpg" alt="" class="w-96 rounded-xl shadow-xl">
-                <img src="./assets/images/main/profil2.jpg" alt="" class="w-96 rounded-xl shadow-xl ml-20">
+                <img src="./assets/images/main/profil2.jpg" alt="" class="w-96 rounded-xl shadow-xl ml-10 lg:ml-20">
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col lg:w-1/2 lg:gap-10">
                 <h6 class="font-semibold text-xl text-indigo-700 text-center">Jelajahi Desa, Temukan Kekayaan Alam dan Manusia</h6>
                 <p class="text-justify text-indigo-900">
                     Selamat datang di Genaharjo, platform digital terdepan yang berfokus pada profil desa-desa di seluruh Indonesia. Di sini, Anda dapat menemukan informasi mendalam mengenai setiap desa, termasuk sejarah, budaya, potensi wisata, serta kehidupan sehari-hari masyarakatnya. Kami juga berkomitmen untuk mempromosikan UMKM (Usaha Mikro, Kecil, dan Menengah) desa, memberikan mereka peluang untuk dikenal lebih luas dan berkembang. Selain itu, kami menyediakan berbagai artikel inspiratif dan edukatif yang dirancang khusus untuk mendukung pengembangan UMKM dan kemajuan desa. Jelajahi dan temukan kekayaan desa-desa kita di Genaharjo, dan mari bersama-sama membangun masa depan yang lebih cerah untuk seluruh masyarakat desa.
@@ -46,10 +50,13 @@ $queryMitra = mysqli_query($koneksi, "SELECT * FROM mitra ORDER BY id_mitra DESC
         </div>
     </div>
 </div>
+<!-- Profil Desa  -->
 
-<div class="lg:mx-40 my-4 mx-4">
-    <h1 class="font-bold text-4xl text-center text-indigo-800 my-4""><span class="font-bold bg-indigo-600 text-white">Berita</span> Desa</h1>
-    <p class="text-justify text-indigo-900 mb-4">Menyediakan Berita tentang Desa maupun UMKM</p>
+<!-- Berita Desa  -->
+<div class="lg:mx-40 my-10 lg:my-20 mx-4">
+    <h1 class="font-bold text-4xl text-center text-indigo-800 my-4""><span class=" font-bold bg-indigo-600 text-white">Berita</span> Desa</h1>
+    <p class="text-center text-indigo-700 mb-4">Menyediakan Berita tentang Desa maupun UMKM</p>
+    <h1 class="font-semibold text-indigo-800 text-2xl mb-4">Hot Article</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <?php while ($row = mysqli_fetch_assoc($queryArticle)) : ?>
             <div class="bg-white rounded-lg shadow hover:shadow-lg hover:duration-500 overflow-hidden flex flex-col md:flex-row">
@@ -64,38 +71,43 @@ $queryMitra = mysqli_query($koneksi, "SELECT * FROM mitra ORDER BY id_mitra DESC
             </div>
         <?php endwhile; ?>
     </div>
+</div>
+<!-- Berita Desa End  -->
 
-    <div class="lg:mx-72 mx-4 my-4">
-        <h1 class="font-bold text-4xl text-center text-indigo-800"><span class="font-bold bg-indigo-600 text-white">Mitra</span> Desa</h1>
-        <p class="text-justify text-indigo-900 mb-4">Menyediakan Mitra Desa yang telah bekerja sama dengan kami</p>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <?php while ($row = mysqli_fetch_assoc($queryMitra)) : ?>
-                <div class="bg-white h-72 rounded-lg shadow hover:shadow-lg hover:duration-500 overflow-hidden flex flex-col md:flex-row">
-                    <div class="overflow-hidden md:w-1/3">
-                        <img src="<?= IMAGE_MITRA . $row['gambar_mitra'] ?>" alt="<?= $row['nama_mitra'] ?>" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                    </div>
-                    <div class="p-4 flex-1">
-                        <h3 class="font-bold text-lg text-indigo-600"><?= $row['nama_mitra'] ?></h3>
-                        <p class="text-gray-700 mt-2"><?= substr($row['deskripsi_mitra'], 0, 200) ?>...</p>
-                        <a href="<?= BASE_URL . "index.php?page=detail_mitra&id_mitra=" . $row['id_mitra'] ?>" class="text-indigo-600 mt-4 inline-block">Lihat Detail...</a>
-                    </div>
+<!-- Mitra Desa -->
+<div class="mx-4 my-10 lg:my-20">
+    <h1 class="font-bold text-4xl text-center text-indigo-800"><span class="font-bold bg-indigo-600 text-white">Mitra</span> Desa</h1>
+    <p class="text-justify text-indigo-900 mb-4">Menyediakan Mitra Desa yang telah bekerja sama dengan kami</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+        <?php while ($row = mysqli_fetch_assoc($queryMitra)) : ?>
+            <div class="bg-white h-72 rounded-lg shadow hover:shadow-lg hover:duration-500 overflow-hidden flex flex-col ">
+                <div class="overflow-hidden">
+                    <img src="<?= IMAGE_MITRA . $row['gambar_mitra'] ?>" alt="<?= $row['nama_mitra'] ?>" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-            <?php endwhile; ?>
-        </div>
+                <div class="p-4 flex-1">
+                    <h3 class="font-bold text-lg text-indigo-600"><?= $row['nama_mitra'] ?></h3>
+                    <p class="text-gray-700 mt-2"><?= substr($row['deskripsi_mitra'], 0, 200) ?>...</p>
+                    <a href="<?= BASE_URL . "index.php?page=detail_mitra&id_mitra=" . $row['id_mitra'] ?>" class="text-indigo-600 mt-4 inline-block">Lihat Detail...</a>
+                </div>
+            </div>
+        <?php endwhile; ?>
     </div>
+</div>
 
-    <div class="mx-16 my-20 flex flex-col">
-        <h1 class="font-bold text-lg">Beritahukan kami sebuah saran atau kritik untuk terus membangun dan memperbaiki Desa.</h1>
-        <form action="" class="flex flex-col gap-2">
-            <div><label for="nama">Nama</label>
-                <input type="text" placeholder="Nama" id="nama" class="w-full border rounded px-2 py-1">
-            </div>
-            <div><label for="email">Email</label>
-                <input type="text" placeholder="Email" id="email" class="w-full border rounded px-2 py-1">
-            </div>
-            <div><label for="masukan" class="">Isi Pesan dan Saran</label>
-                <textarea name="" id="masukan" placeholder="Pesan dan saran anda.." class="w-full border rounded px-2 py-1"></textarea>
-            </div>
-            <input type="submit" value="Kirim Masukan" class="bg-green-600 rounded py-2 text-white">
-        </form>
-    </div>
+<!-- Mitra Desa End  -->
+
+<div class="mx-16 my-20 flex flex-col">
+    <h1 class="font-bold text-lg">Beritahukan kami sebuah saran atau kritik untuk terus membangun dan memperbaiki Desa.</h1>
+    <form action="" class="flex flex-col gap-2">
+        <div><label for="nama">Nama</label>
+            <input type="text" placeholder="Nama" id="nama" class="w-full border rounded px-2 py-1">
+        </div>
+        <div><label for="email">Email</label>
+            <input type="text" placeholder="Email" id="email" class="w-full border rounded px-2 py-1">
+        </div>
+        <div><label for="masukan" class="">Isi Pesan dan Saran</label>
+            <textarea name="" id="masukan" placeholder="Pesan dan saran anda.." class="w-full border rounded px-2 py-1"></textarea>
+        </div>
+        <input type="submit" value="Kirim Masukan" class="bg-green-600 rounded py-2 text-white">
+    </form>
+</div>

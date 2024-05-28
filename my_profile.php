@@ -9,7 +9,7 @@ if ($id_user) {
 }
 
 ?>
-<div class="flex w-full justify-center items-start py-20">
+<div class="flex w-full justify-center items-start py-36">
     
     <?php
     if ($level == "admin") {
@@ -19,9 +19,6 @@ if ($id_user) {
                 <a <?php if ($module == "article") {
                         echo "class='bg-green-500 text-white py-2 px-5 rounded'";
                     } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=article&action=list"; ?>">Article</a>
-                <a <?php if ($module == "directory") {
-                        echo "class='bg-green-500 text-white py-2 px-5 rounded'";
-                    } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=directory&action=list"; ?>">Directory</a>
                 <a <?php if ($module == "mitra") {
                         echo "class='bg-green-500 text-white py-2 px-5 rounded'";
                     } ?> href="<?php echo BASE_URL . "index.php?page=my_profile&module=mitra&action=list"; ?>">Mitra</a>
