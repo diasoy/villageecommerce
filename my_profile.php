@@ -9,12 +9,12 @@ if ($id_user) {
 }
 
 ?>
-<div class="flex w-full justify-center items-start py-36">
+<div class="flex w-full justify-center lg:items-start items-center py-36 flex-col lg:flex-row">
     
     <?php
     if ($level == "admin") {
     ?>
-        <div class="flex flex-col justify-between gap-10 mx-4 rounded-lg border shadow w-1/5 px-8 py-4">
+        <div class="flex flex-col justify-between gap-10 mx-4 rounded-lg border shadow lg:w-1/5 px-8 py-4">
             <div class="flex  flex-col gap-5">
                 <a <?php if ($module == "article") {
                         echo "class='bg-green-500 text-white py-2 px-5 rounded'";

@@ -1,7 +1,7 @@
 <?php
 $no = 1;
 
-$queryAdmin = mysqli_query($koneksi, "SELECT * FROM masukan ORDER BY nama_masukan ASC");
+$queryAdmin = mysqli_query($koneksi, "SELECT * FROM masukan");
 
 if (mysqli_num_rows($queryAdmin) == 0) {
     echo "<h3>Saat ini belum ada data masukkan yang dimasukan</h3>";
@@ -12,7 +12,6 @@ if (mysqli_num_rows($queryAdmin) == 0) {
                     <th class='w-1/12 text-center py-2'>No</th>
                     <th class='w-2/12 py-2'>Nama</th>
                     <th class='w-2/12 py-2'>Email</th>
-                    <th class='w-2/12 py-2'>Phone</th>
                     <th class='w-2/12 py-2'>Pesan</th>
                     <th class='w-1/12 text-center py-2'>Action</th>
                  </tr>";
@@ -22,9 +21,8 @@ if (mysqli_num_rows($queryAdmin) == 0) {
                         <td class='w-1/12 text-center py-3'>$no</td>
                         <td class='w-2/12 py-3 px-5'>$rowMasukan[nama_masukan]</td>
                         <td class='w-2/12 py-3 px-5'>$rowMasukan[email_masukan]</td>
-                        <td class='w-2/12 py-3 px-5'>$rowMasukan[phone_masukan]</td>
                         <td class='w-2/12 py-3 px-5'>$rowMasukan[pesan_masukan]</td>
-                        <td class='w-1/12 text-center py-3'><a class='inline-block bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-5 rounded' href='" . BASE_URL . "index.php?page=my_profile&module=masukan&action=form&id_masukan=$rowMasukan[id_masukan]" . "'>Edit</a></td>
+                        <td class='w-1/12 text-center py-3'><a class='inline-block bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-5 rounded' href='" . BASE_URL . "index.php?page=my_profile&module=masukan&action=hapus&id_masukan=$rowMasukan[id_masukan]" . "'>Hapus</a></td>
                      </tr>";
 
         $no++;

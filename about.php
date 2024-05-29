@@ -1,24 +1,31 @@
-<div class="py-32">
-    <div class="flex flex-col xl:flex-row gap-10 w-full">
-        <div class="mx-4 md:mx-20 lg:32">
-            <img src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" class="xl:w-96">
-        </div>
-        <div class="mx-4">
-            <div>
-                <h1 class="font-bold text-2xl text-indigo-700 text-center">Visi</h1>
-                <p class="text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque aspernatur perspiciatis quia ullam! Impedit aliquam aut molestias veniam nobis. Deserunt modi ullam debitis voluptas molestiae laudantium assumenda repellat. Dolorum, vero ea. Ab ut iusto id et corrupti alias consectetur inventore?</p>
-            </div>
+<!-- Buatkan sebuah halaman about yang cantik dan responsive untuk menceritakan penggunaan website dan tujuan dibuat website -->
+<div class="py-40">
+    <div class="">
+        <div class="lg:px-72 xl:px-96 px-6 md:px-28">
+            <h1 class="font-bold text-4xl text-indigo-700">Tentang Kami</h1>
+            <p class="mt-4">Website ini dibuat untuk memberikan informasi seputar desa dan UMKM yang ada di desa. Kami berharap dengan adanya website ini, masyarakat dapat mengetahui informasi seputar desa dan UMKM yang ada di desa. Kami juga berharap dengan adanya website ini, masyarakat dapat mengetahui informasi seputar desa dan UMKM yang ada di desa. Kami juga berharap dengan adanya website ini, masyarakat dapat mengetahui informasi seputar desa dan UMKM yang ada di desa.</p>
 
-            <div>
-                <h1 class="font-bold text-2xl text-indigo-700 text-center">Misi</h1>
-                <ul class="list-disc mx-4 text-justify">
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt provident voluptate facere aut, consectetur natus.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt provident voluptate facere aut, consectetur natus.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt provident voluptate facere aut, consectetur natus.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt provident voluptate facere aut, consectetur natus.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt provident voluptate facere aut, consectetur natus.</li>
-                </ul>
+            <div class="flex gap-4 mt-8">
+                <div class="flex flex-col gap-2">
+                    <h1 class="font-bold text-2xl text-indigo-700">Tujuan</h1>
+                    <p>1. Memberikan informasi seputar desa dan UMKM yang ada di desa.</p>
+                    <p>2. Membantu masyarakat mengetahui informasi seputar desa dan UMKM yang ada di desa.</p>
+                    <p>3. Membantu masyarakat mengetahui informasi seputar desa dan UMKM yang ada di desa.</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h1 class="font-bold text-2xl text-indigo-700">Visi</h1>
+                    <p>1. Menjadi website yang memberikan informasi seputar desa dan UMKM yang ada di desa.</p>
+                    <p>2. Membantu masyarakat mengetahui informasi seputar desa dan UMKM yang ada di desa.</p>
+                    <p>3. Membantu masyarakat mengetahui informasi seputar desa dan UMKM yang ada di desa.</p>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h1 class="font-bold text-2xl text-indigo-700">Misi</h1>
+                    <p>1. Memberikan informasi seputar desa dan UMKM yang ada di desa.</p>
+                    <p>2. Membantu masyarakat mengetahui informasi seputar desa dan UMKM yang ada di desa.</p>
+                    <p>3. Membantu masyarakat mengetahui informasi seputar desa dan UMKM yang ada di desa.</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+

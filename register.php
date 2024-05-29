@@ -23,39 +23,39 @@ if ($id_user) {
             echo "<div class='bg-red-500 text-white py-2 px-3 w-full my-3 rounded'>Maaf, email yang kamu masukan sudah terdaftar</div>";
         }
         ?>
-        <h1 class="pb-10 font-bold text-lg">Register account</h1>
+        <h1 class="pb-10 font-bold text-lg text-indigo-900">Register account</h1>
         <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2">Nama Lengkap</label>
-            <input type="text" name="nama_user" value="<?php echo $nama_lengkap; ?>" class="ring-green-600 ring-1 rounded w-full py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline" />
+            <label class="block text-indigo-900 text-sm font-bold mb-2">Nama Lengkap</label>
+            <input type="text" name="nama_user" value="<?php echo $nama_lengkap; ?>" class="ring-indigo-600 ring-1 rounded w-full py-2 px-3 text-indigo-900 leading-tight focus:outline-none focus:shadow-outline" />
         </div>
 
         <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-            <input type="text" name="email_user" value="<?php echo $email; ?>" class="ring-green-600 ring-1 rounded w-full py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline" />
+            <label class="block text-indigo-900 text-sm font-bold mb-2">Email</label>
+            <input type="text" name="email_user" value="<?php echo $email; ?>" class="ring-indigo-600 ring-1 rounded w-full py-2 px-3 text-indigo-900 leading-tight focus:outline-none focus:shadow-outline" />
         </div>
 
         <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2">Nomor Telepon / Handphone</label>
-            <input type="text" name="phone_user" value="<?php echo $phone; ?>" class="ring-green-600 ring-1 rounded w-full py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline" />
+            <label class="block text-indigo-900 text-sm font-bold mb-2">Nomor Telepon / Handphone</label>
+            <input type="text" name="phone_user" value="<?php echo $phone; ?>" class="ring-indigo-600 ring-1 rounded w-full py-2 px-3 text-indigo-900 leading-tight focus:outline-none focus:shadow-outline" />
         </div>
 
         <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2">Alamat</label>
-            <textarea name="alamat_user" class="ring-green-600 ring-1 rounded w-full py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline"><?php echo $alamat; ?></textarea>
+            <label class="block text-indigo-900 text-sm font-bold mb-2">Alamat</label>
+            <textarea name="alamat_user" class="ring-indigo-600 ring-1 rounded w-full py-2 px-3 text-indigo-900 leading-tight focus:outline-none focus:shadow-outline"><?php echo $alamat; ?></textarea>
         </div>
 
         <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
-            <input type="password" name="password_user" class="ring-green-600 ring-1 rounded w-full py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline" />
+            <label class="block text-indigo-900 text-sm font-bold mb-2">Password</label>
+            <input type="password" name="password_user" class="ring-indigo-600 ring-1 rounded w-full py-2 px-3 text-indigo-900 leading-tight focus:outline-none focus:shadow-outline" />
         </div>
 
         <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2">Re-type Password</label>
-            <input type="password" name="re_password" class="ring-green-600 ring-1 rounded w-full py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline" />
+            <label class="block text-indigo-900 text-sm font-bold mb-2">Re-type Password</label>
+            <input type="password" name="re_password" class="ring-indigo-600 ring-1 rounded w-full py-2 px-3 text-indigo-900 leading-tight focus:outline-none focus:shadow-outline" />
         </div>
 
         <div class="flex items-center justify-between">
-            <button class="bg-green-600 w-full hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Register</button>
+            <button class="bg-indigo-600 w-full hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Register</button>
         </div>
     </form>
 

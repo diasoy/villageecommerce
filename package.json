@@ -6,6 +6,7 @@
     "dev": "npx tailwindcss -i ./css/input.css -o ./css/output.css --watch"
   },
   "dependencies": {
-    "chart.js": "^4.4.3"
+    "chart.js": "^4.4.3",
+    "sweetalert2": "^11.11.0"
   }
 }
