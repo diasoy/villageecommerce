@@ -21,8 +21,10 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="css/output.css">
     <style>
         * {
@@ -101,7 +103,6 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
                         </div>
                     </a>
                     <button id="close-menu-button" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                        <span class="">Close menu</span>
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
@@ -119,7 +120,7 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
                         <div class="py-6">
                             <?php if ($id_user) { ?>
                                 <div class="space-y-2 py-6">
-                                    <p class="text-base font-semibold leading-7 text-gray-900">Selamat datang, <b><?php echo $nama; ?></b></p>
+                                    <p class="text-base font-semibold leading-7 text-gray-900">Selamat datang, <b class="text-indigo-600"><?php echo $nama; ?></b></p>
                                     <a href="<?php echo BASE_URL . "index.php?page=my_profile&module=mitra&action=list"; ?>" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Kontrol</a>
                                 </div>
                             <?php } else { ?>

@@ -15,11 +15,22 @@ if (!$result) {
 ?>
 
 <div class="lg:px-72 xl:px-96 px-6 md:px-28 py-36 text-indigo-800">
+    <div>
+        <h1 class="font-bold text-5xl mb-4">Selamat Datang di Village E Commerce</h1>
+
+    </div>
     <h1 class="font-bold text-3xl mb-5">Article Teratas</h1>
     <div class="mb-8">
         <h5 class="font-semibold text-xl">Wawasan Bisnis</h5>
         <p>Perluas wawasan dengan ragam pengetahuan bisnis untuk bersiap naik kelas. Temukan tren pasar terkini, tips manajemen bisnis, cerita inspiratif, dan berbagai istilah bisnis pada kategori ini.</p>
     </div>
+    <form action="" method="post" class="flex flex-col gap-4 my-10">
+        <label for="article" class="font-bold text-indigo-800">Cari semua article dari semua kategori berdasarkan judul</label>
+        <div class="relative">
+            <input id="article" type="search" placeholder="Cari article" class="px-5 py-2 rounded-xl pl-10" autocomplete="off">
+            <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-indigo-400"></i>
+        </div>
+    </form>
     <div class="mb-8">
         <div class="flex gap-4 justify-center flex-wrap">
             <a href="<?= BASE_URL . "index.php?page=article&kategori=semua" ?>" class="px-4 py-2 rounded <?= ($kategori == 'semua') ? 'bg-white text-indigo-900' : 'bg-indigo-700 text-white' ?>">Semua Artikel</a>
@@ -29,7 +40,7 @@ if (!$result) {
             <a href="<?= BASE_URL . "index.php?page=article&kategori=kasus" ?>" class="px-4 py-2 rounded <?= ($kategori == 'kasus') ? 'bg-white text-indigo-900' : 'bg-indigo-700 text-white' ?>">Bedah Kasus</a>
         </div>
     </div>
-    <div class="space-y-8">
+    <div class="space-y-8" id="container-article">
         <?php while ($row = mysqli_fetch_assoc($result)) : ?>
             <div class="bg-white rounded-lg shadow hover:shadow-lg hover:duration-500 duration-500 overflow-hidden flex flex-col md:flex-row">
                 <div class="overflow-hidden md:w-1/3">
@@ -44,3 +55,21 @@ if (!$result) {
         <?php endwhile; ?>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#article').on('keyup', function() {
+            var keyword = $(this).val();
+            $.ajax({
+                url: 'search_article.php',
+                type: 'post',
+                data: {
+                    keyword: keyword
+                },
+                success: function(result) {
+                    $('#container-article').html(result);
+                }
+            });
+        });
+    });
+</script>

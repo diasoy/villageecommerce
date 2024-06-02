@@ -17,7 +17,7 @@
         if ($level == "admin") {
             echo "<table class='mx-4 border-collapse w-full mt-4'>";
 
-            echo "<tr class='border-b p-1 bg-gray-200'>
+            echo "<tr class='border-b p-1 bg-indigo-300'>
                     <th class='w-1/12 text-center py-2'>No</th>
                     <th class='w-2/12 py-2'>Id User</th>
                     <th class='w-2/12 py-2'>Nama</th>
@@ -45,7 +45,7 @@
         } else {
             echo "<table class='mx-4 border-collapse w-full'>";
 
-            echo "<tr class='border-b p-1 bg-gray-200'>
+            echo "<tr class='border-b p-1 bg-indigo-300'>
                     <th class='w-1/12 text-center py-2'>No</th>
                     <th class='w-2/12 py-2'>Nama</th>
                     <th class='w-1/12 py-2'>Kategori</th>

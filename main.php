@@ -8,8 +8,8 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
 <div class="pt-10 flex w-full justify-center items-center h-[100vh]" style="background-image: url('assets/images/main/hero.jpg')">
     <div class="mx-5">
         <div class="flex flex-col justify-center items-center gap-8">
-            <h1 class="font-bold text-white text-5xl drop-shadow-lg"><span class="bg-[#4F46E5]">Welcome</span> to Village E Commerce</h1>
-            <p class="text-white text-lg">The best place to find your favorite UMKM products</p>
+            <h1 class="font-bold text-center text-white text-5xl drop-shadow-lg"><span class="bg-[#4F46E5]">Welcome</span> to Village E Commerce</h1>
+            <p class="text-lg font-semibold text-white drop-shadow-2xl text-center md:mx-12 lg:mx-20 xl:mx-44">Platform unggulan yang didedikasikan untuk mengangkat potensi desa-desa di seluruh Indonesia. Melalui website ini, Anda dapat menjelajahi berbagai informasi tentang desa-desa, mulai dari profil dan sejarah, hingga potensi wisata dan budaya. Kami juga berkomitmen untuk mempromosikan UMKM (Usaha Mikro, Kecil, dan Menengah) yang ada di desa-desa, memberikan mereka panggung untuk tumbuh dan berkembang. Selain itu, kami menyediakan berbagai artikel inspiratif dan informatif seputar pengembangan desa dan UMKM, untuk membantu memberdayakan masyarakat dan memperkuat ekonomi lokal. Bergabunglah dengan kami dalam perjalanan ini untuk mengenal dan mendukung desa-desa kita lebih dekat.</p>
         </div>
     </div>
 </div>
@@ -39,7 +39,7 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
             </div>
             <div class="flex flex-col xl:w-1/2 lg:gap-10">
                 <h6 class="font-semibold text-xl text-indigo-700 text-center">Jelajahi Desa, Temukan Kekayaan Alam dan Manusia</h6>
-                <p class="text-justify text-indigo-900">
+                <p class="text-justify text-indigo-900 lg:text-lg">
                     Selamat datang di Genaharjo, platform digital terdepan yang berfokus pada profil desa-desa di seluruh Indonesia. Di sini, Anda dapat menemukan informasi mendalam mengenai setiap desa, termasuk sejarah, budaya, potensi wisata, serta kehidupan sehari-hari masyarakatnya. Kami juga berkomitmen untuk mempromosikan UMKM (Usaha Mikro, Kecil, dan Menengah) desa, memberikan mereka peluang untuk dikenal lebih luas dan berkembang. Selain itu, kami menyediakan berbagai artikel inspiratif dan edukatif yang dirancang khusus untuk mendukung pengembangan UMKM dan kemajuan desa. Jelajahi dan temukan kekayaan desa-desa kita di Genaharjo, dan mari bersama-sama membangun masa depan yang lebih cerah untuk seluruh masyarakat desa.
                 </p>
             </div>
@@ -102,16 +102,16 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
             <input type="text" placeholder="Email" id="email" name="email_masukan" class="w-full border rounded px-2 py-1">
         </div>
         <div>
-            <label for="masukan" class="">Isi Pesan dan Saran</label>
-            <textarea name="pesan_masukan" id="masukan" cols="30" rows="10" class="w-full border rounded px-2 py-1"></textarea>
-        </div>
-        <div>
             <label for="jenis_masukan">Jenis Keperluan</label>
             <select name="jenis_masukan" id="jenis_masukan" class="w-full border rounded px-2 py-1">
                 <option value="Kritik / Saran">Kritik / Saran</option>
                 <option value="Konsultasi">Konsultasi</option>
                 <option value="Pertanyaan">Pertanyaan</option>
             </select>
+        </div>
+        <div>
+            <label for="masukan" class="">Isi Pesan dan Saran</label>
+            <textarea name="pesan_masukan" id="masukan" cols="30" rows="10" class="w-full border rounded px-2 py-1"></textarea>
         </div>
         <button type="submit" class="bg-indigo-600 text-white py-2 rounded">Kirim</button>
     </form>
