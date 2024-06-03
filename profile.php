@@ -28,7 +28,7 @@
     <div class="flex flex-col my-20 gap-10 justify-center items-center">
         <h1 class="text-3xl font-bold text-indigo-700"><span class="font-bold bg-indigo-600 text-white">Peta</span> Lokasi Desa</h1>
         <div class="mx-4" id="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31682.941044636787!2d112.07333178284257!3d-6.965885183138921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e77973c38874bcb%3A0xb4cd9737c6140803!2sGenaharjo%2C%20Kec.%20Semanding%2C%20Kabupaten%20Tuban%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1716969833844!5m2!1sid!2sid" width="1200" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-xl shadow-lg"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31682.941044636787!2d112.07333178284257!3d-6.965885183138921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e77973c38874bcb%3A0xb4cd9737c6140803!2sGenaharjo%2C%20Kec.%20Semanding%2C%20Kabupaten%20Tuban%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1716969833844!5m2!1sid!2sid" width="1200" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-3xl shadow-2xl shadow-indigo-300"></iframe>
 
         </div>
     </div>
