@@ -26,7 +26,7 @@ $kunjunganMitra = $row["kunjungan_mitra"];
             <p class="text-justify"><?= $deskripsiMitra ?></p>
             <p class="mt-5">Rincian Harga : <?= $rincianHarga ?></p>
             <div>
-                <a href="https://wa.me/<?= $phoneMitra ?>" class="mt-5 bg-green-600 text-white block">Hubungi via Whatsapp</a>
+                <a href="https://wa.me/<?= $phoneMitra ?>" class="mt-5 text-white inline">Hubungi via Whatsapp</a>
             </div>
             <p class="mt-5 opacity-30">Dilihat sebanyak <?= $kunjunganMitra ?> kali</p>
         </div>

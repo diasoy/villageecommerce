@@ -12,7 +12,7 @@
         echo "<h3 class='text-lg font-bold'>Saat ini belum ada data article yang dimasukan</h3>";
     } else {
         echo "<table class='mx-4 border-collapse w-full mt-4'>
-            <tr class='border-b p-1 bg-gray-200'>
+            <tr class='border-b p-1 text-white bg-indigo-700'>
                 <th class='w-1/12 py-4 px-6'>No</th>
                 <th class='w-2/12 text-center py-2'>Judul</th>
                 <th class='w-2/12 text-center py-2'>Kategori</th>
@@ -23,7 +23,7 @@
           <tbody>";
 
         while ($row = mysqli_fetch_array($queryArticle)) {
-            echo "<tr class='hover:bg-gray-100'>
+            echo "<tr class=''>
                 <td class='w-1/12 text-center py-3'>$no</td>
                 <td class='w-2/12 text-center py-3'>$row[judul_article]</td>
                 <td class='w-2/12 text-center py-3'>$row[kategori_article]</td>

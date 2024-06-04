@@ -9,7 +9,9 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
     <div class="mx-5">
         <div class="flex flex-col justify-center items-center gap-8">
             <h1 class="font-bold text-center text-white text-5xl drop-shadow-lg"><span class="bg-[#4F46E5]">Welcome</span> to Village E Commerce</h1>
-            <h2 class="text-lg font-semibold text-white text-center md:mx-12 lg:mx-20 xl:mx-44 hidden xl:block">Platform unggulan yang didedikasikan untuk mengangkat potensi desa-desa di seluruh Indonesia. Melalui website ini, Anda dapat menjelajahi berbagai informasi tentang desa-desa, mulai dari profil dan sejarah, hingga potensi wisata dan budaya. Kami juga berkomitmen untuk mempromosikan UMKM (Usaha Mikro, Kecil, dan Menengah) yang ada di desa-desa, memberikan mereka panggung untuk tumbuh dan berkembang. Selain itu, kami menyediakan berbagai artikel inspiratif dan informatif seputar pengembangan desa dan UMKM, untuk membantu memberdayakan masyarakat dan memperkuat ekonomi lokal. Bergabunglah dengan kami dalam perjalanan ini untuk mengenal dan mendukung desa-desa kita lebih dekat.</h2>
+            <p class="text-white font-semibold text-center">
+                A place where you can find information about villages and UMKM in Indonesia. Explore the beauty of the villages and support the growth of UMKM.
+            </p>
         </div>
     </div>
 </div>
