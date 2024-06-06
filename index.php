@@ -1,10 +1,18 @@
 <?php
-ob_start();
-session_start();
+
 include_once("function/database.php");
 include_once('function/helper.php');
 
+ob_start();
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    $_SESSION['id_guest'] = uniqid('guest_');
+};
+
+
 $page = isset($_GET['page']) ? $_GET['page'] : false;
+
 
 $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : false;
 $nama = isset($_SESSION['nama_user']) ? $_SESSION['nama_user'] : false;

@@ -1,30 +1,45 @@
 <?php
-
-include_once("function/database.php");
-include_once('function/helper.php');
-
-$query = "SELECT * FROM mitra WHERE status_mitra = 'on' ORDER BY kunjungan_mitra DESC";
-$result = mysqli_query($koneksi, $query);
-
-if (!$result) {
-    die('Query Error : ' . mysqli_errno($koneksi) . ' - ' . mysqli_error($koneksi));
+if ($koneksi->connect_errno) {
+    die('Connect Error: ' . $koneksi->connect_errno . ' - ' . $koneksi->connect_error);
 }
-
 $kategori = isset($_GET['kategori']) ? $_GET['kategori'] : 'semua';
-$query = "SELECT * FROM mitra WHERE status_mitra = 'on'";
+$query = "SELECT mitra.*, IFNULL(kunjungan_mitra.total_clicks, 0) as total_clicks
+          FROM mitra
+          LEFT JOIN (
+              SELECT id_mitra, COUNT(*) as total_clicks
+              FROM kunjungan_mitra
+              GROUP BY id_mitra
+          ) kunjungan_mitra ON mitra.id_mitra = kunjungan_mitra.id_mitra
+          WHERE mitra.status_mitra = 'on'";
 
 if ($kategori != 'semua') {
-    $query .= " AND kategori_mitra = '$kategori'";
+    $query .= " AND mitra.kategori_mitra = '$kategori'";
 }
 
-$query .= " ORDER BY kunjungan_mitra DESC";
-$result = mysqli_query($koneksi, $query);
+$query .= " ORDER BY total_clicks DESC";
+$result = $koneksi->query($query);
 
 if (!$result) {
-    die('Query Error : ' . mysqli_errno($koneksi) . ' - ' . mysqli_error($koneksi));
+    die('Query Error: ' . $koneksi->errno . ' - ' . $koneksi->error);
 }
-?>
 
+if (isset($_GET['id_mitra'])) {
+    $id_mitra = $_GET['id_mitra'];
+    $updateQuery = "UPDATE mitra SET kunjungan_mitra = kunjungan_mitra + 1 WHERE id_mitra = '$id_mitra'";
+    $updateResult = $koneksi->query($updateQuery);
+
+    if (!$updateResult) {
+        die('Update Query Error: ' . $koneksi->errno . ' - ' . $koneksi->error);
+    }
+
+    $id_guest = $_SESSION['id_guest'];
+    $insertQuery = "INSERT INTO kunjungan_mitra (id_mitra, id_guest) VALUES ('$id_mitra', '$id_guest')";
+    $insertResult = $koneksi->query($insertQuery);
+
+    if (!$insertResult) {
+        die('Insert Query Error: ' . $koneksi->errno . ' - ' . $koneksi->error);
+    }
+}
 ?>
 
 <div class="lg:px-36 xl:px-56 px-6 md:px-28 py-32">
@@ -50,16 +65,16 @@ if (!$result) {
         </div>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="container-mitra">
-        <?php if (mysqli_num_rows($result) > 0) : ?>
-            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+        <?php if ($result->num_rows > 0) : ?>
+            <?php while ($row = $result->fetch_assoc()) : ?>
                 <div class="bg-white rounded-lg shadow hover:shadow-lg duration-500 hover:duration-500">
                     <a href="<?= BASE_URL . "index.php?page=kunjungan_mitra&id_mitra=" . $row['id_mitra']; ?>">
                         <img src="<?= IMAGE_MITRA . $row["gambar_mitra"]; ?>" alt="<?= $row['gambar_mitra']; ?>" class="w-full h-60 object-cover rounded-t-lg">
                         <div class="flex flex-col py-5 mx-4">
                             <h1 class="text-lg font-bold"><?= $row['nama_mitra']; ?></h1>
                             <p class="text-gray-500"><?= $row['kategori_mitra']; ?></p>
-                            <p class="text-gray-500">Rincian Harga : <?= $row['rincian_harga']; ?></p>
-                            <p class="text-gray-400 mt-4 text-xs">Dilihat <?= $row['kunjungan_mitra'] ?> kali</p>
+                            <p class="text-gray-500">Rincian Harga: <?= $row['rincian_harga']; ?></p>
+                            <p class="text-gray-400 mt-4 text-xs">Dilihat <?= $row['total_clicks'] ?> kali</p>
                         </div>
                     </a>
                 </div>

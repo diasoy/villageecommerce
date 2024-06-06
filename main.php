@@ -1,5 +1,5 @@
 <?php
-$queryArticle = mysqli_query($koneksi, "SELECT * FROM article ORDER BY kunjungan_article DESC LIMIT 4");
+$queryArticle = mysqli_query($koneksi, "SELECT * FROM article ORDER BY id_article DESC LIMIT 4");
 $queryMitra = mysqli_query($koneksi, "SELECT * FROM mitra ORDER BY id_mitra DESC LIMIT 4");
 $status = isset($_GET['status']) ? $_GET['status'] : '';
 ?>
