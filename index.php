@@ -56,7 +56,7 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
 
 </head>
 
-<body class="bg-gradient-to-tr from-indigo-200 via-indigo-50 to-indigo-100">
+<body class="bg-gradient-to-tr from-indigo-300 via-indigo-50 to-cyan-100">
     <nav class="fixed w-full z-50 bg-white shadow">
         <div class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">

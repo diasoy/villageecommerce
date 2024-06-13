@@ -40,9 +40,6 @@ if (isset($_GET['id_article'])) {
 ?>
 
 <div class="lg:px-72 xl:px-96 px-6 md:px-28 py-36 text-indigo-800">
-    <div>
-        <h1 class="font-bold text-5xl mb-4">Selamat Datang di Village E Commerce</h1>
-    </div>
     <h1 class="font-bold text-3xl mb-5">Article Teratas</h1>
     <div class="mb-8">
         <h5 class="font-semibold text-xl">Wawasan Bisnis</h5>

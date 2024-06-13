@@ -5,8 +5,11 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
 ?>
 
 <!-- Hero -->
-<div class="pt-10 flex w-full justify-center items-center h-[100vh]" style="background-image: url('assets/images/main/hero.jpg')">
-    <div class="mx-5">
+<div class="pt-10 flex w-full justify-center items-center h-[100vh] relative">
+    <video autoplay muted loop class="absolute w-full h-full object-cover">
+        <source src="assets/videos/profil-desa.mp4" type="video/mp4">
+    </video>
+    <div class="mx-5 z-10">
         <div class="flex flex-col justify-center items-center gap-8">
             <h1 class="font-bold text-center text-white text-5xl drop-shadow-lg"><span class="bg-[#4F46E5]">Welcome</span> to Village E Commerce</h1>
             <p class="text-white font-semibold text-center">
@@ -92,7 +95,7 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
 </div>
 <!-- Mitra Desa End -->
 
-<div class="mx-16 md:mx-32 lg:mx-52 xl:mx-72 2xl:mx-96 my-20 flex flex-col pb-52">
+<div class="mx-16 md:mx-32 lg:mx-52 xl:mx-72 2xl:mx-[rem] my-20 flex flex-col pb-52">
     <h1 class="font-bold text-2xl text-center text-indigo-800">Beritahukan kami sebuah saran atau kritik untuk terus membangun dan memperbaiki Desa.</h1>
     <form action="<?= BASE_URL . "proses_masukan.php" ?>" method="POST" class="flex flex-col gap-2">
         <div>
@@ -115,7 +118,7 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
             <label for="masukan" class="">Isi Pesan dan Saran</label>
             <textarea name="pesan_masukan" id="masukan" cols="30" rows="10" class="w-full border rounded px-2 py-1"></textarea>
         </div>
-        <button type="submit" class="bg-indigo-600 text-white py-2 rounded">Kirim</button>
+        <button type="submit" class="bg-indigo-600 text-white py-2 rounded inline">Kirim</button>
     </form>
 </div>
 
