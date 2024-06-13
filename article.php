@@ -74,7 +74,6 @@ if (isset($_GET['id_article'])) {
                     <h3 class="font-bold text-lg text-indigo-600"><?= $row['judul_article'] ?></h3>
                     <p class="text-gray-700 mt-2"><?= substr($row['deskripsi_article'], 0, 200) ?>...</p>
                     <a href="<?= BASE_URL . "index.php?page=kunjungan_article&id_article=" . $row['id_article'] ?>" class="text-indigo-600 mt-4 inline-block">Baca Selengkapnya...</a>
-                    <p>Dilihat sebanyak: <?= $row['total_clicks'] ?></p>
                 </div>
             </div>
         <?php endwhile; ?>

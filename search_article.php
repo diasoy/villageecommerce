@@ -5,7 +5,7 @@ include_once('function/helper.php');
 
 $keyword = isset($_POST['keyword']) ? $_POST['keyword'] : '';
 
-$query = "SELECT * FROM article WHERE status_article = 'on' AND judul_article LIKE '%$keyword%' ORDER BY kunjungan_article DESC";
+$query = "SELECT * FROM article WHERE status_article = 'on' AND judul_article LIKE '%$keyword%'";
 $result = mysqli_query($koneksi, $query);
 
 if (!$result) {

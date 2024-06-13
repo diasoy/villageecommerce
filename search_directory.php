@@ -5,7 +5,7 @@ include_once('function/helper.php');
 
 $keyword = isset($_POST['keyword']) ? $_POST['keyword'] : '';
 
-$query = "SELECT * FROM mitra WHERE status_mitra = 'on' AND nama_mitra LIKE '%$keyword%' ORDER BY kunjungan_mitra DESC";
+$query = "SELECT * FROM mitra WHERE status_mitra = 'on' AND nama_mitra LIKE '%$keyword%'";
 $result = mysqli_query($koneksi, $query);
 
 if (!$result) {
@@ -21,7 +21,6 @@ if (mysqli_num_rows($result) > 0) {
         echo '<h1 class="text-lg font-bold">' . $row['nama_mitra'] . '</h1>';
         echo '<p class="text-gray-500">' . $row['kategori_mitra'] . '</p>';
         echo '<p class="text-gray-500">Rincian Harga : ' . $row['rincian_harga'] . '</p>';
-        echo '<p class="text-gray-400 mt-4 text-xs">Dilihat ' . $row['kunjungan_mitra'] . ' kali</p>';
         echo '</div>';
         echo '</a>';
         echo '</div>';

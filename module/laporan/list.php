@@ -10,10 +10,8 @@ $articleLabels = [];
 $articleValues = [];
 $mitraLabels = [];
 $mitraValues = [];
-$kategoriArticleLabels = [];
-$kategoriArticleValues = [];
-$kategoriMitraLabels = [];
-$kategoriMitraValues = [];
+$kategoriArticleData = [];
+$kategoriMitraData = [];
 
 $currentMonth = date('m');
 $currentYear = date('Y');
@@ -43,49 +41,59 @@ if (!$resultMitra) {
 while ($row = mysqli_fetch_assoc($resultArticle)) {
     $articleLabels[] = $row['judul_article'];
     $articleValues[] = $row['total'];
-    $kategoriArticleLabels[] = $row['kategori_article'];
-    $kategoriArticleValues[] = $row['total'];
+    if (isset($kategoriArticleData[$row['kategori_article']])) {
+        $kategoriArticleData[$row['kategori_article']] += $row['total'];
+    } else {
+        $kategoriArticleData[$row['kategori_article']] = $row['total'];
+    }
 }
 
 while ($row = mysqli_fetch_assoc($resultMitra)) {
     $mitraLabels[] = $row['nama_mitra'];
     $mitraValues[] = $row['total'];
-    $kategoriMitraLabels[] = $row['kategori_mitra'];
-    $kategoriMitraValues[] = $row['total'];
+    if (isset($kategoriMitraData[$row['kategori_mitra']])) {
+        $kategoriMitraData[$row['kategori_mitra']] += $row['total'];
+    } else {
+        $kategoriMitraData[$row['kategori_mitra']] = $row['total'];
+    }
 }
+
+$kategoriArticleLabels = array_keys($kategoriArticleData);
+$kategoriArticleValues = array_values($kategoriArticleData);
+$kategoriMitraLabels = array_keys($kategoriMitraData);
+$kategoriMitraValues = array_values($kategoriMitraData);
 
 array_multisort($articleValues, SORT_DESC, $articleLabels);
 array_multisort($mitraValues, SORT_DESC, $mitraLabels);
-
-
 ?>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<div class="flex flex-col justify-center w-full mx-96 gap-52 py-32">
-    <h1 class="text-5xl font-bold text-center">Periode bulan: <span class="text-blue-500"><?= date('F Y') ?></span></h1>
-    <div class="">
-        <h1 class="font-bold text-4xl text-center py-10 text-indigo-800">Article</h1>
-        <div class="">
-            <canvas class="" id="articleChart"></canvas>
-        </div>
-        <div class="">
-            <canvas class="" id="kategoriArticleChart"></canvas>
-        </div>
-    </div>
-    <div class="">
-        <h1 class="font-bold text-4xl text-center py-10 text-indigo-800">Mitra</h1>
-        <div class="">
-            <canvas class="" id="mitraChart"></canvas>
-        </div>
-        <div class="">
-            <canvas class="" id="kategoriMitraChart"></canvas>
+<div class="flex flex-col justify-center w-full mx-auto gap-10 py-10 max-w-5xl">
+    <h1 class="text-4xl font-bold text-center mb-5">Periode bulan: <span class="text-blue-500"><?= date('F Y') ?></span></h1>
+    <div class="bg-white shadow-md rounded-lg p-5">
+        <h1 class="font-bold text-3xl text-center py-5 text-indigo-800">Article</h1>
+        <div class="flex gap-10 justify-center">
+            <div class="w-1/2 max-w-sm">
+                <canvas id="articleChart"></canvas>
+            </div>
+            <div class="w-1/2 max-w-sm">
+                <canvas id="kategoriArticleChart"></canvas>
+            </div>
         </div>
     </div>
-
+    <div class="bg-white shadow-md rounded-lg p-5 mt-10">
+        <h1 class="font-bold text-3xl text-center py-5 text-indigo-800">Mitra</h1>
+        <div class="flex gap-10 justify-center">
+            <div class="w-1/2 max-w-sm">
+                <canvas id="mitraChart"></canvas>
+            </div>
+            <div class="w-1/2 max-w-sm">
+                <canvas id="kategoriMitraChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <a href="<?= BASE_URL . "module/laporan/pdf.php" ?>" target="_blank" class="text-white bg-indigo-700 text-center font-bold py-2 px-4 rounded mt-10 block w-full">Download Laporan</a>
 </div>
-<a href="<?= BASE_URL . "module/laporan/pdf.php" ?>" class="text-indigo-700 underline font-bold py-2 px-4 rounded">Download Laporan</a>
-
-
 
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
@@ -108,12 +116,14 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
                     label: 'Total Clicks per Article',
                     data: articleValues,
                     backgroundColor: 'rgba(75, 192, 192, 0.7)',
-                    borderWidth: 1
+                    borderWidth: 0, // remove border
+                    borderRadius: 10 // add border radius
                 }]
             },
             options: {
                 indexAxis: 'y',
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     title: {
                         display: true,
@@ -121,6 +131,18 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
                     },
                     legend: {
                         position: 'bottom'
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false,
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false,
+                        }
                     }
                 }
             }
@@ -136,12 +158,14 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
                     label: 'Total Clicks per Mitra',
                     data: mitraValues,
                     backgroundColor: 'rgba(153, 102, 255, 0.7)',
-                    borderWidth: 1
+                    borderWidth: 0,
+                    borderRadius: 10
                 }]
             },
             options: {
                 indexAxis: 'y',
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     title: {
                         display: true,
@@ -149,6 +173,18 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
                     },
                     legend: {
                         position: 'bottom'
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false,
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false,
+                        }
                     }
                 }
             }
@@ -175,6 +211,7 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     title: {
                         display: true,
@@ -189,7 +226,8 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
 
         // Kategori Mitra chart
         var ctxKategoriMitra = document.getElementById('kategoriMitraChart').getContext('2d');
-        var myChartKategoriMitra = new Chart(ctxKategoriMitra, {
+        var myChart
+        KategoriMitra = new Chart(ctxKategoriMitra, {
             type: 'pie',
             data: {
                 labels: kategoriMitraLabels,
@@ -208,6 +246,7 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     title: {
                         display: true,
@@ -219,5 +258,6 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
                 }
             }
         });
+
     });
 </script>

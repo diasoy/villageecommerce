@@ -10,7 +10,6 @@ $kategoriMitra = $row["kategori_mitra"];
 $deskripsiMitra = $row["deskripsi_mitra"];
 $rincianHarga = $row["rincian_harga"];
 $phoneMitra = $row["phone_mitra"];
-$kunjunganMitra = $row["kunjungan_mitra"];
 
 ?>
 <div class="py-32 2xl:mx-96 xl:mx-72 mx-8 md:mx-20 lg:mx-52">
@@ -28,7 +27,6 @@ $kunjunganMitra = $row["kunjungan_mitra"];
             <div>
                 <a href="https://wa.me/<?= $phoneMitra ?>" class="mt-5 text-white inline">Hubungi via Whatsapp</a>
             </div>
-            <p class="mt-5 opacity-30">Dilihat sebanyak <?= $kunjunganMitra ?> kali</p>
         </div>
     </div>
 </div>
