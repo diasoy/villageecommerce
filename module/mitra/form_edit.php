@@ -11,17 +11,14 @@ $deskripsiMitra = $row["deskripsi_mitra"];
 $rincianHarga = $row["rincian_harga"];
 $phoneMitra = $row["phone_mitra"];
 
-
 ?>
 <div class="flex flex-col w-full justify-center py-20">
-
     <form action="<?php echo BASE_URL . "module/mitra/edit.php?id_mitra=$id_mitra" ?>" method="POST" class="space-y-4 flex flex-col mx-72 text-indigo-900" enctype="multipart/form-data">
-
         <div class="flex flex-col">
             <label class="font-bold mb-1">Gambar Mitra</label>
-            <img src="<?= IMAGE_MITRA .  $gambarMitra ?>" class="w-52 rounded mb-4" />
+            <img src="<?= IMAGE_MITRA . $gambarMitra ?>" class="w-52 rounded mb-4" />
             <input type="file" name="gambar_mitra" class="border-2 border-gray-200 p-2 rounded" />
-            <input type="hidden" name="gambar_mitra" value="<?= $gambarMitra ?>" />
+            <input type="hidden" name="gambarLama" value="<?= $gambarMitra ?>" />
             <div class="mt-2">File saat ini: <?= $gambarMitra ?></div>
         </div>
 
@@ -37,7 +34,7 @@ $phoneMitra = $row["phone_mitra"];
 
         <div class="flex flex-col">
             <label class="font-bold mb-1">Deskripsi Mitra</label>
-            <textarea type="text" name="deskripsi_mitra" class="border-2 border-gray-200 p-2 rounded"><?php echo $deskripsiMitra; ?></textarea>
+            <textarea name="deskripsi_mitra" class="border-2 border-gray-200 p-2 rounded"><?php echo $deskripsiMitra; ?></textarea>
         </div>
 
         <div class="flex flex-col">

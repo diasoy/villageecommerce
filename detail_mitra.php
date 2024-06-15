@@ -17,15 +17,15 @@ $phoneMitra = $row["phone_mitra"];
         <div>
             <h1 class="font-bold 2xl:text-5xl lg:text-3xl text-2xl mb-5 text-indigo-800"><?= $namaMitra ?></h1>
         </div>
-        <div class="">
-            <img src="<?= IMAGE_MITRA .  $gambarMitra ?>" class="rounded-xl object-cover max-h-[40rem]">
+        <div class="w-full overflow-hidden rounded-xl mb-5">
+            <img src="<?= IMAGE_MITRA .  $gambarMitra ?>" class="w-full h-96 object-cover">
         </div>
-        <div class="flex flex-col my-4">
-            <h2 class="font-semibold text-lg text-indigo-700"><?= $kategoriMitra ?></h2>
-            <p class="text-justify"><?= $deskripsiMitra ?></p>
-            <p class="mt-5">Rincian Harga : <?= $rincianHarga ?></p>
-            <div>
-                <a href="https://wa.me/<?= $phoneMitra ?>" class="mt-5 text-white inline">Hubungi via Whatsapp</a>
+        <div class="flex flex-col my-4 text-center lg:text-left">
+            <h2 class="font-semibold text-xl text-indigo-700 mb-2"><?= $kategoriMitra ?></h2>
+            <p class="text-justify text-gray-700 mb-4"><?= $deskripsiMitra ?></p>
+            <p class="mt-5 font-semibold text-lg">Rincian Harga: <span class="font-normal text-indigo-700"><?= $rincianHarga ?></span></p>
+            <div class="mt-5">
+                <a href="https://wa.me/<?= $phoneMitra ?>" target="_blank" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 inline-block">Hubungi via Whatsapp</a>
             </div>
         </div>
     </div>

@@ -95,7 +95,7 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
 </div>
 <!-- Mitra Desa End -->
 
-<div class="mx-16 md:mx-32 lg:mx-52 xl:mx-72 2xl:mx-[rem] my-20 flex flex-col pb-52">
+<div class="mx-16 md:mx-32 lg:mx-52 xl:mx-72 2xl:mx-[32rem] my-20 flex flex-col pb-52">
     <h1 class="font-bold text-2xl text-center text-indigo-800">Beritahukan kami sebuah saran atau kritik untuk terus membangun dan memperbaiki Desa.</h1>
     <form action="<?= BASE_URL . "proses_masukan.php" ?>" method="POST" class="flex flex-col gap-2">
         <div>
@@ -121,26 +121,3 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
         <button type="submit" class="bg-indigo-600 text-white py-2 rounded inline">Kirim</button>
     </form>
 </div>
-
-
-<script>
-    <?php if ($status === 'success') : ?>
-        Swal.fire({
-            icon: 'success',
-            title: 'Berhasil',
-            text: 'Masukan Anda telah berhasil dikirim!',
-            confirmButtonColor: '#4F46E5'
-        }).then(() => {
-            window.history.replaceState(null, null, window.location.pathname);
-        });
-    <?php elseif ($status === 'error') : ?>
-        Swal.fire({
-            icon: 'error',
-            title: 'Gagal',
-            text: 'Terjadi kesalahan saat mengirim masukan. Silakan coba lagi.',
-            confirmButtonColor: '#4F46E5'
-        }).then(() => {
-            window.history.replaceState(null, null, window.location.pathname);
-        });
-    <?php endif; ?>
-</script>

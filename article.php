@@ -64,7 +64,7 @@ if (isset($_GET['id_article'])) {
     <div class="space-y-8" id="container-article">
         <?php while ($row = mysqli_fetch_assoc($result)) : ?>
             <div class="bg-white rounded-lg shadow hover:shadow-lg hover:duration-500 duration-500 overflow-hidden flex flex-col md:flex-row">
-                <div class="overflow-hidden md:w-1/3">
+                <div class="overflow-hidden md:w-1/3" style="height: 200px;">
                     <img src="<?= IMAGE_ARTICLES . $row['gambar_article'] ?>" alt="<?= $row['judul_article'] ?>" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
                 <div class="p-4 flex-1">

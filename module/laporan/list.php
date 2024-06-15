@@ -1,10 +1,6 @@
 <?php
-if (!isset($_SESSION['id_guest'])) {
-    $id_guest = uniqid();
-    $_SESSION['id_guest'] = $id_guest;
-} else {
-    $id_guest = $_SESSION['id_guest'];
-}
+
+$userLevel = $_SESSION['level_user']; // 'admin' or 'customer'
 
 $articleLabels = [];
 $articleValues = [];
@@ -16,15 +12,27 @@ $kategoriMitraData = [];
 $currentMonth = date('m');
 $currentYear = date('Y');
 
-$queryArticle = "SELECT article.judul_article as judul_article, article.kategori_article, SUM(kunjungan_article.click) as total 
-                FROM kunjungan_article 
-                INNER JOIN article ON kunjungan_article.id_article = article.id_article 
-                WHERE MONTH(kunjungan_article.tanggal_kunjungan) = '$currentMonth' AND YEAR(kunjungan_article.tanggal_kunjungan) = '$currentYear'
-                GROUP BY article.id_article";
-$resultArticle = mysqli_query($koneksi, $queryArticle);
+if ($userLevel == 'admin') {
+    $queryArticle = "SELECT article.judul_article as judul_article, article.kategori_article, SUM(kunjungan_article.click) as total 
+                    FROM kunjungan_article 
+                    INNER JOIN article ON kunjungan_article.id_article = article.id_article 
+                    WHERE MONTH(kunjungan_article.tanggal_kunjungan) = '$currentMonth' AND YEAR(kunjungan_article.tanggal_kunjungan) = '$currentYear'
+                    GROUP BY article.id_article";
+    $resultArticle = mysqli_query($koneksi, $queryArticle);
 
-if (!$resultArticle) {
-    die('Query Error: ' . mysqli_errno($koneksi) . ' - ' . mysqli_error($koneksi));
+    if (!$resultArticle) {
+        die('Query Error: ' . mysqli_errno($koneksi) . ' - ' . mysqli_error($koneksi));
+    }
+
+    while ($row = mysqli_fetch_assoc($resultArticle)) {
+        $articleLabels[] = $row['judul_article'];
+        $articleValues[] = $row['total'];
+        if (isset($kategoriArticleData[$row['kategori_article']])) {
+            $kategoriArticleData[$row['kategori_article']] += $row['total'];
+        } else {
+            $kategoriArticleData[$row['kategori_article']] = $row['total'];
+        }
+    }
 }
 
 $queryMitra = "SELECT mitra.nama_mitra as nama_mitra, mitra.kategori_mitra, SUM(kunjungan_mitra.click) as total 
@@ -36,16 +44,6 @@ $resultMitra = mysqli_query($koneksi, $queryMitra);
 
 if (!$resultMitra) {
     die('Query Error: ' . mysqli_errno($koneksi) . ' - ' . mysqli_error($koneksi));
-}
-
-while ($row = mysqli_fetch_assoc($resultArticle)) {
-    $articleLabels[] = $row['judul_article'];
-    $articleValues[] = $row['total'];
-    if (isset($kategoriArticleData[$row['kategori_article']])) {
-        $kategoriArticleData[$row['kategori_article']] += $row['total'];
-    } else {
-        $kategoriArticleData[$row['kategori_article']] = $row['total'];
-    }
 }
 
 while ($row = mysqli_fetch_assoc($resultMitra)) {
@@ -70,6 +68,8 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <div class="flex flex-col justify-center w-full mx-auto gap-10 py-10 max-w-5xl">
     <h1 class="text-4xl font-bold text-center mb-5">Periode bulan: <span class="text-blue-500"><?= date('F Y') ?></span></h1>
+    
+    <?php if ($userLevel == 'admin') : ?>
     <div class="bg-white shadow-md rounded-lg p-5">
         <h1 class="font-bold text-3xl text-center py-5 text-indigo-800">Article</h1>
         <div class="flex gap-10 justify-center">
@@ -81,6 +81,8 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
             </div>
         </div>
     </div>
+    <?php endif; ?>
+
     <div class="bg-white shadow-md rounded-lg p-5 mt-10">
         <h1 class="font-bold text-3xl text-center py-5 text-indigo-800">Mitra</h1>
         <div class="flex gap-10 justify-center">
@@ -92,13 +94,16 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
             </div>
         </div>
     </div>
+
     <a href="<?= BASE_URL . "module/laporan/pdf.php" ?>" target="_blank" class="text-white bg-indigo-700 text-center font-bold py-2 px-4 rounded mt-10 block w-full">Download Laporan</a>
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
+        <?php if ($userLevel == 'admin') : ?>
         var articleLabels = <?php echo json_encode($articleLabels); ?>;
         var articleValues = <?php echo json_encode($articleValues); ?>;
+        <?php endif; ?>
         var mitraLabels = <?php echo json_encode($mitraLabels); ?>;
         var mitraValues = <?php echo json_encode($mitraValues); ?>;
         var kategoriArticleLabels = <?php echo json_encode($kategoriArticleLabels); ?>;
@@ -106,6 +111,7 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
         var kategoriMitraLabels = <?php echo json_encode($kategoriMitraLabels); ?>;
         var kategoriMitraValues = <?php echo json_encode($kategoriMitraValues); ?>;
 
+        <?php if ($userLevel == 'admin') : ?>
         // Article chart
         var ctxArticle = document.getElementById('articleChart').getContext('2d');
         var myChartArticle = new Chart(ctxArticle, {
@@ -128,48 +134,6 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
                     title: {
                         display: true,
                         text: 'Total Clicks per Article'
-                    },
-                    legend: {
-                        position: 'bottom'
-                    }
-                },
-                scales: {
-                    x: {
-                        grid: {
-                            display: false,
-                        }
-                    },
-                    y: {
-                        grid: {
-                            display: false,
-                        }
-                    }
-                }
-            }
-        });
-
-        // Mitra chart
-        var ctxMitra = document.getElementById('mitraChart').getContext('2d');
-        var myChartMitra = new Chart(ctxMitra, {
-            type: 'bar',
-            data: {
-                labels: mitraLabels,
-                datasets: [{
-                    label: 'Total Clicks per Mitra',
-                    data: mitraValues,
-                    backgroundColor: 'rgba(153, 102, 255, 0.7)',
-                    borderWidth: 0,
-                    borderRadius: 10
-                }]
-            },
-            options: {
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Total Clicks per Mitra'
                     },
                     legend: {
                         position: 'bottom'
@@ -223,11 +187,53 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
                 }
             }
         });
+        <?php endif; ?>
+
+        // Mitra chart
+        var ctxMitra = document.getElementById('mitraChart').getContext('2d');
+        var myChartMitra = new Chart(ctxMitra, {
+            type: 'bar',
+            data: {
+                labels: mitraLabels,
+                datasets: [{
+                    label: 'Total Clicks per Mitra',
+                    data: mitraValues,
+                    backgroundColor: 'rgba(153, 102, 255, 0.7)',
+                    borderWidth: 0,
+                    borderRadius: 10
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Total Clicks per Mitra'
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false,
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false,
+                        }
+                    }
+                }
+            }
+        });
 
         // Kategori Mitra chart
         var ctxKategoriMitra = document.getElementById('kategoriMitraChart').getContext('2d');
-        var myChart
-        KategoriMitra = new Chart(ctxKategoriMitra, {
+        var myChartKategoriMitra = new Chart(ctxKategoriMitra, {
             type: 'pie',
             data: {
                 labels: kategoriMitraLabels,

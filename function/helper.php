@@ -87,54 +87,30 @@ function uploadImageArticle($file)
     }
 }
 
-function uploadImageMitra($file)
-{
-    $namaFile = $file['name'];
-    $ukuranFile = $file['size'];
-    $error = $file['error'];
-    $tmpName = $file['tmp_name'];
+function uploadImageMitra($file) {
+    $targetDir = "../../assets/images/mitra/";
+    $targetFile = $targetDir . basename($file["name"]);
+    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
-    if ($error === 4) {
-        echo '<script>
-                alert("Pilih gambar terlebih dahulu");
-              </script>';
+    $check = getimagesize($file["tmp_name"]);
+    if ($check === false) {
         return false;
     }
 
-    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
-    $ekstensiGambar = explode('.', $namaFile);
-    $ekstensiGambar = strtolower(end($ekstensiGambar));
-
-    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
-        echo '<script>
-                alert("Yang anda upload bukan gambar");
-              </script>';
+    if ($file["size"] > 5000000) {
         return false;
     }
 
-    if ($ukuranFile > 5000000) {
-        echo '<script>
-                alert("Ukuran gambar terlalu besar");
-              </script>';
+    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
         return false;
     }
 
-    $namaFileBaru = uniqid();
-    $namaFileBaru .= '.';
-    $namaFileBaru .= $ekstensiGambar;
+    $newFileName = uniqid() . "." . $imageFileType;
+    $targetFile = $targetDir . $newFileName;
 
-    $targetDir = __DIR__ . '/../assets/images/mitra/';
-    if (!file_exists($targetDir)) {
-        mkdir($targetDir, 0777, true);
-    }
-    $targetFile = $targetDir . $namaFileBaru;
-
-    if (move_uploaded_file($tmpName, $targetFile)) {
-        return $namaFileBaru;
+    if (move_uploaded_file($file["tmp_name"], $targetFile)) {
+        return $newFileName;
     } else {
-        echo '<script>
-                alert("Gagal upload gambar");
-              </script>';
         return false;
     }
 }
