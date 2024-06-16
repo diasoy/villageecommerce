@@ -23,7 +23,7 @@ $phoneMitra = $row["phone_mitra"];
         </div>
 
         <div class="flex flex-col">
-            <label class="font-bold mb-1">Judul Mitra</label>
+            <label class="font-bold mb-1">Nama Mitra</label>
             <input type="text" name="nama_mitra" value="<?php echo $namaMitra; ?>" class="border-2 border-gray-200 p-2 rounded" />
         </div>
 
@@ -54,7 +54,7 @@ $phoneMitra = $row["phone_mitra"];
         </div>
 
         <div class="flex justify-end">
-            <input type="submit" name="button" value="Update" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" />
+            <input type="submit" name="button" value="Update" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" />
         </div>
     </form>
 </div>

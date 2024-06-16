@@ -37,7 +37,7 @@
             </div>
 
             <div class="flex justify-center">
-                <input type="submit" name="button" value="Tambah" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-20 rounded" />
+                <input type="submit" name="button" value="Tambah" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-20 rounded cursor-pointer" />
             </div>
         </form>
     </div>
