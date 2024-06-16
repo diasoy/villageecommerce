@@ -12,7 +12,13 @@
 
             <div class="flex flex-col">
                 <label class="font-bold mb-1">Kategori</label>
-                <input type="text" name="kategori_mitra" class="border-2 border-gray-200 p-2 rounded" />
+                <select name="kategori_mitra" id="kategori_mitra" class="border-2 border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <option value="Makanan">Makanan</option>
+                    <option value="Minuman">Minuman</option>
+                    <option value="Jasa">Jasa</option>
+                    <option value="Sewa">Sewa</option>
+                    <option value="Produk">Produk</option>
+                </select>
             </div>
 
             <div class="flex flex-col">

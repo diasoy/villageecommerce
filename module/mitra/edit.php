@@ -2,40 +2,24 @@
 include("../../function/database.php");
 include("../../function/helper.php");
 
-$id_mitra = $_GET['id_mitra'];
+$id_article = $_GET['id_article'];
 
-// Fetch form data
-$namaMitra = $_POST["nama_mitra"];
-$kategoriMitra = $_POST["kategori_mitra"];
-$deskripsiMitra = $_POST["deskripsi_mitra"];
-$rincianHarga = $_POST["rincian_harga"];
-$phoneMitra = $_POST["phone_mitra"];
+$judulArticle = $_POST['judul_article'];
+$kategoriArticle = $_POST["kategori_article"];
+$deskripsiArticle = $_POST["deskripsi_article"];
+$authorArticle = $_POST["author_article"];
+$statusArticle = $_POST["status_article"];
 
-// Handle file upload if a new image is uploaded
-if (isset($_FILES['gambar_mitra']) && $_FILES['gambar_mitra']['error'] === 0) {
-    $gambarMitra = uploadImageMitra($_FILES['gambar_mitra']);
-    if (!$gambarMitra) {
+if (isset($_FILES['gambar_article']) && $_FILES['gambar_article']['error'] === 0) {
+    $gambarArticle = uploadImageArticle($_FILES['gambar_article']);
+    if (!$gambarArticle) {
         echo "Failed to upload image";
         exit;
     }
 } else {
-    // Use the old image if no new image is uploaded
-    $gambarMitra = $_POST["gambarLama"];
+    $gambarArticle = $_POST["gambarLama"];
 }
 
-// Update the database
-$query = "UPDATE mitra 
-          SET gambar_mitra='$gambarMitra', 
-              nama_mitra='$namaMitra', 
-              kategori_mitra='$kategoriMitra', 
-              deskripsi_mitra='$deskripsiMitra', 
-              rincian_harga='$rincianHarga', 
-              phone_mitra='$phoneMitra' 
-          WHERE id_mitra='$id_mitra'";
+mysqli_query($koneksi, "UPDATE article SET gambar_article='$gambarArticle', judul_article='$judulArticle', kategori_article='$kategoriArticle', deskripsi_article='$deskripsiArticle', author_article='$authorArticle', status_article='$statusArticle' WHERE id_article='$id_article'");
 
-if (mysqli_query($koneksi, $query)) {
-    header("location: " . BASE_URL . "index.php?page=my_profile&module=mitra&action=list");
-} else {
-    echo "Error: " . mysqli_error($koneksi);
-}
-?>
+header("location: " . BASE_URL . "index.php?page=my_profile&module=article&action=list");

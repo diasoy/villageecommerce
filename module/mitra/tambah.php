@@ -26,6 +26,6 @@ if (isset($_FILES['gambar_mitra']) && $_FILES['gambar_mitra']['error'] === 0) {
 }
 
 
-mysqli_query($koneksi, "INSERT INTO mitra (id_mitra, gambar_mitra, id_user, nama_mitra, kategori_mitra, deskripsi_mitra, rincian_harga, phone_mitra, status_mitra, kunjungan_mitra) VALUES ('$id_mitra', '$gambarMitra','$id_user', '$namaMitra', '$kategoriMitra', '$deskripsiMitra', '$rincianHarga', '$phoneMitra', 'off', 1)");
+mysqli_query($koneksi, "INSERT INTO mitra (id_mitra, gambar_mitra, id_user, nama_mitra, kategori_mitra, deskripsi_mitra, rincian_harga, phone_mitra, status_mitra) VALUES ('$id_mitra', '$gambarMitra','$id_user', '$namaMitra', '$kategoriMitra', '$deskripsiMitra', '$rincianHarga', '$phoneMitra', 'off')");
 
 header("location: " . BASE_URL . "index.php?page=my_profile&module=mitra&action=list");
