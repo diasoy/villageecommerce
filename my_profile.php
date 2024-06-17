@@ -14,7 +14,7 @@ if ($id_user) {
     <?php
     if ($level == "admin") {
     ?>
-        <div class="bg-white flex flex-col justify-between gap-10 mx-4 rounded-lg border shadow lg:w-1/5 px-8 py-4">
+        <div class="print:hidden bg-white flex flex-col justify-between gap-10 mx-4 rounded-lg border shadow lg:w-1/5 px-8 py-4">
             <div class="flex  flex-col gap-5">
                 <a <?php if ($module == "article") {
                         echo "class='bg-green-500 text-white py-2 px-5 rounded'";
@@ -41,7 +41,7 @@ if ($id_user) {
     <?php
     } else {
     ?>
-        <div class="bg-white flex flex-col justify-between gap-10 mx-4 rounded-lg border shadow w-1/5 px-8 py-4">
+        <div class="print:hidden bg-white flex flex-col justify-between gap-10 mx-4 rounded-lg border shadow w-1/5 px-8 py-4">
             <div class="flex  flex-col gap-5">
                 <a <?php if ($module == "mitra") {
                         echo "class='bg-green-500 text-white py-2 px-5 rounded'";
@@ -57,7 +57,7 @@ if ($id_user) {
     <?php  } ?>
 
 
-    <div class="flex w-4/5 bg-white mx-4 rounded-lg shadow-lg">
+    <div class="flex w-4/5 print:w-full print:shadow-none print:rounded-none bg-white mx-4 rounded-lg shadow-lg">
         <?php
         $file = "module/$module/$action.php";
         if (file_exists($file)) {

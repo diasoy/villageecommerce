@@ -67,42 +67,50 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <div class="flex flex-col justify-center w-full mx-auto gap-10 py-10 max-w-5xl">
-    <h1 class="text-4xl font-bold text-center mb-5">Periode bulan: <span class="text-blue-500"><?= date('F Y') ?></span></h1>
-    
+    <h1 class="text-4xl font-bold text-center mb-5 print:text-4xl">Data Kunjungan</h1>
+    <h1 class="text-2xl font-bold text-center mb-5 print:text-2xl">Periode bulan: <span class="text-blue-500"><?= date('F Y') ?></span></h1>
+
     <?php if ($userLevel == 'admin') : ?>
-    <div class="bg-white shadow-md rounded-lg p-5">
-        <h1 class="font-bold text-3xl text-center py-5 text-indigo-800">Article</h1>
-        <div class="flex gap-10 justify-center">
-            <div class="w-1/2 max-w-sm">
-                <canvas id="articleChart"></canvas>
-            </div>
-            <div class="w-1/2 max-w-sm">
-                <canvas id="kategoriArticleChart"></canvas>
+        <div class="bg-white print:p-0 shadow-md rounded-lg p-5">
+            <h1 class="font-bold text-3xl text-center py-5 text-indigo-800">Article</h1>
+            <div class="grid grid-cols-2 gap-10">
+                <div class="w-full">
+                    <canvas id="articleChart"></canvas>
+                </div>
+                <div class="w-full">
+                    <canvas id="kategoriArticleChart"></canvas>
+                </div>
             </div>
         </div>
-    </div>
     <?php endif; ?>
 
-    <div class="bg-white shadow-md rounded-lg p-5 mt-10">
+    <div class="bg-white print:p-0 shadow-md rounded-lg p-5 mt-10">
         <h1 class="font-bold text-3xl text-center py-5 text-indigo-800">Mitra</h1>
-        <div class="flex gap-10 justify-center">
-            <div class="w-1/2 max-w-sm">
+        <div class="grid grid-cols-2 gap-10">
+            <div class="w-full">
                 <canvas id="mitraChart"></canvas>
             </div>
-            <div class="w-1/2 max-w-sm">
+            <div class="w-full">
                 <canvas id="kategoriMitraChart"></canvas>
             </div>
         </div>
     </div>
 
-    <a href="<?= BASE_URL . "module/laporan/pdf.php" ?>" target="_blank" class="text-white bg-indigo-700 text-center font-bold py-2 px-4 rounded mt-10 block w-full">Download Laporan</a>
+    <button class="bg-indigo-700 hover:bg-indigo-800 py-2 rounded-lg text-white font-semibold" id="downloadPrintButton">Download / Print Laporan</button>
+
 </div>
 
 <script>
+    //print
+    document.getElementById('downloadPrintButton').addEventListener('click', function() {
+        window.print();
+    });
+
+    // Chart
     document.addEventListener('DOMContentLoaded', (event) => {
         <?php if ($userLevel == 'admin') : ?>
-        var articleLabels = <?php echo json_encode($articleLabels); ?>;
-        var articleValues = <?php echo json_encode($articleValues); ?>;
+            var articleLabels = <?php echo json_encode($articleLabels); ?>;
+            var articleValues = <?php echo json_encode($articleValues); ?>;
         <?php endif; ?>
         var mitraLabels = <?php echo json_encode($mitraLabels); ?>;
         var mitraValues = <?php echo json_encode($mitraValues); ?>;
@@ -112,81 +120,81 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
         var kategoriMitraValues = <?php echo json_encode($kategoriMitraValues); ?>;
 
         <?php if ($userLevel == 'admin') : ?>
-        // Article chart
-        var ctxArticle = document.getElementById('articleChart').getContext('2d');
-        var myChartArticle = new Chart(ctxArticle, {
-            type: 'bar',
-            data: {
-                labels: articleLabels,
-                datasets: [{
-                    label: 'Total Kunjungan per Article',
-                    data: articleValues,
-                    backgroundColor: 'rgba(75, 192, 192, 0.7)',
-                    borderWidth: 0, // remove border
-                    borderRadius: 10 // add border radius
-                }]
-            },
-            options: {
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Total Kunjungan per Article'
-                    },
-                    legend: {
-                        position: 'bottom'
-                    }
+            // Article chart
+            var ctxArticle = document.getElementById('articleChart').getContext('2d');
+            var myChartArticle = new Chart(ctxArticle, {
+                type: 'bar',
+                data: {
+                    labels: articleLabels,
+                    datasets: [{
+                        label: 'Total Kunjungan per Article',
+                        data: articleValues,
+                        backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                        borderWidth: 0, // remove border
+                        borderRadius: 10 // add border radius
+                    }]
                 },
-                scales: {
-                    x: {
-                        grid: {
-                            display: false,
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Total Kunjungan per Article'
+                        },
+                        legend: {
+                            position: 'bottom'
                         }
                     },
-                    y: {
-                        grid: {
-                            display: false,
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false,
+                            }
+                        },
+                        y: {
+                            grid: {
+                                display: false,
+                            }
                         }
                     }
                 }
-            }
-        });
+            });
 
-        // Kategori Article chart
-        var ctxKategoriArticle = document.getElementById('kategoriArticleChart').getContext('2d');
-        var myChartKategoriArticle = new Chart(ctxKategoriArticle, {
-            type: 'pie',
-            data: {
-                labels: kategoriArticleLabels,
-                datasets: [{
-                    label: 'Total Kunjungan per Article Category',
-                    data: kategoriArticleValues,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.7)',
-                        'rgba(54, 162, 235, 0.7)',
-                        'rgba(255, 205, 86, 0.7)',
-                        'rgba(75, 192, 192, 0.7)',
-                        'rgba(153, 102, 255, 0.7)',
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: 'Total Kunjungan per Article Category'
-                    },
-                    legend: {
-                        position: 'bottom'
+            // Kategori Article chart
+            var ctxKategoriArticle = document.getElementById('kategoriArticleChart').getContext('2d');
+            var myChartKategoriArticle = new Chart(ctxKategoriArticle, {
+                type: 'pie',
+                data: {
+                    labels: kategoriArticleLabels,
+                    datasets: [{
+                        label: 'Total Kunjungan per Article Category',
+                        data: kategoriArticleValues,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.7)',
+                            'rgba(54, 162, 235, 0.7)',
+                            'rgba(255, 205, 86, 0.7)',
+                            'rgba(75, 192, 192, 0.7)',
+                            'rgba(153, 102, 255, 0.7)',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Total Kunjungan per Article Category'
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
                     }
                 }
-            }
-        });
+            });
         <?php endif; ?>
 
         // Mitra chart

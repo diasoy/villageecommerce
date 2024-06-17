@@ -55,7 +55,7 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
 </head>
 
 <body class="bg-gradient-to-tr from-indigo-300 via-indigo-50 to-cyan-100">
-    <nav class="fixed w-full z-50 bg-white shadow">
+    <nav class="print:hidden fixed w-full z-50 bg-white shadow">
         <div class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">
                 <a href="<?php echo BASE_URL . "index.php?page=main"; ?>" class="-m-1.5 p-1.5 flex items-center gap-x-4">
@@ -151,7 +151,7 @@ $level = isset($_SESSION['level_user']) ? $_SESSION['level_user'] : false;
         ?>
     </div>
 
-    <footer class="bg-gray-800 text-white py-8">
+    <footer class="print:hidden bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center flex-wrap">
                 <!-- About Section -->
