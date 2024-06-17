@@ -4,7 +4,7 @@ $no = 1;
 $queryAdmin = mysqli_query($koneksi, "SELECT * FROM masukan");
 
 if (mysqli_num_rows($queryAdmin) == 0) {
-    echo "<h3>Saat ini belum ada data masukkan yang dimasukan</h3>";
+    echo "<h3 class='text-center text-lg font-bold py-52 w-full'>Saat ini belum ada data masukkan yang dimasukan</h3>";
 } else {
     echo "<table class='w-full border-collapse border-b-2 border-green-600'>";
 
@@ -22,7 +22,7 @@ if (mysqli_num_rows($queryAdmin) == 0) {
                         <td class='w-2/12 py-3 px-5'>$rowMasukan[nama_masukan]</td>
                         <td class='w-2/12 py-3 px-5'>$rowMasukan[email_masukan]</td>
                         <td class='w-5/12 py-3 px-5'>$rowMasukan[pesan_masukan]</td>
-                        <td class='w-2/12 text-center py-3'><a class='inline-block bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-5 rounded' href='" . BASE_URL . "index.php?page=my_profile&module=masukan&action=hapus&id_masukan=$rowMasukan[id_masukan]" . "'>Hapus</a></td>
+                        <td class='w-2/12 text-center py-3'><a class='inline-block bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-5 rounded' href='" . BASE_URL . "index.php?page=my_profile&module=masukan&action=hapus&id_masukan=$rowMasukan[id_masukan]" . "'>Hapus</a></td>
                      </tr>";
 
         $no++;

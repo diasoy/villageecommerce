@@ -119,7 +119,7 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
             data: {
                 labels: articleLabels,
                 datasets: [{
-                    label: 'Total Clicks per Article',
+                    label: 'Total Kunjungan per Article',
                     data: articleValues,
                     backgroundColor: 'rgba(75, 192, 192, 0.7)',
                     borderWidth: 0, // remove border
@@ -133,7 +133,7 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Total Clicks per Article'
+                        text: 'Total Kunjungan per Article'
                     },
                     legend: {
                         position: 'bottom'
@@ -161,7 +161,7 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
             data: {
                 labels: kategoriArticleLabels,
                 datasets: [{
-                    label: 'Total Clicks per Article Category',
+                    label: 'Total Kunjungan per Article Category',
                     data: kategoriArticleValues,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.7)',
@@ -179,7 +179,7 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Total Clicks per Article Category'
+                        text: 'Total Kunjungan per Article Category'
                     },
                     legend: {
                         position: 'bottom'
@@ -196,7 +196,7 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
             data: {
                 labels: mitraLabels,
                 datasets: [{
-                    label: 'Total Clicks per Mitra',
+                    label: 'Total Kunjungan per Mitra',
                     data: mitraValues,
                     backgroundColor: 'rgba(153, 102, 255, 0.7)',
                     borderWidth: 0,
@@ -210,7 +210,7 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Total Clicks per Mitra'
+                        text: 'Total Kunjungan per Mitra'
                     },
                     legend: {
                         position: 'bottom'
@@ -238,7 +238,7 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
             data: {
                 labels: kategoriMitraLabels,
                 datasets: [{
-                    label: 'Total Clicks per Mitra Category',
+                    label: 'Total Kunjungan per Mitra Category',
                     data: kategoriMitraValues,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.7)',
@@ -256,7 +256,7 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Total Clicks per Mitra Category'
+                        text: 'Total Kunjungan per Mitra Category'
                     },
                     legend: {
                         position: 'bottom'

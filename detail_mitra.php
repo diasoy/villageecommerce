@@ -20,9 +20,9 @@ $phoneMitra = $row["phone_mitra"];
         <div class="w-full overflow-hidden rounded-xl mb-5">
             <img src="<?= IMAGE_MITRA .  $gambarMitra ?>" class="w-full h-96 object-cover">
         </div>
-        <div class="flex flex-col my-4 text-center lg:text-left">
-            <h2 class="font-semibold text-xl text-indigo-700 mb-2"><?= $kategoriMitra ?></h2>
-            <p class="text-justify text-gray-700 mb-4"><?= $deskripsiMitra ?></p>
+        <div class="flex flex-col my-4 text-center">
+            <h1 class="font-semibold text-xl mb-2">Kategori : <h1 class="font-semibold text-2xl text-indigo-700 mb-2"><?= $kategoriMitra ?></h1></h1>
+            <p class="text-justify text-lg text-gray-700 mb-4"><?= $deskripsiMitra ?></p>
             <p class="mt-5 font-semibold text-lg">Rincian Harga: <span class="font-normal text-indigo-700"><?= $rincianHarga ?></span></p>
             <div class="mt-5">
                 <a href="https://wa.me/<?= $phoneMitra ?>" target="_blank" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 inline-block">Hubungi via Whatsapp</a>

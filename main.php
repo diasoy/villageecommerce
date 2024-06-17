@@ -104,7 +104,7 @@ $status = isset($_GET['status']) ? $_GET['status'] : '';
         </div>
         <div>
             <label for="email">Email</label>
-            <input type="text" placeholder="Email" id="email" name="email_masukan" class="w-full border rounded px-2 py-1">
+            <input type="text" placeholder= "Email" id="email" name="email_masukan" class="w-full border rounded px-2 py-1">
         </div>
         <div>
             <label for="jenis_masukan">Jenis Keperluan</label>

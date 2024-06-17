@@ -1,5 +1,4 @@
 <?php
-
 include_once("function/database.php");
 include_once('function/helper.php');
 
@@ -12,7 +11,6 @@ if (!isset($_SESSION['user_id'])) {
 
 
 $page = isset($_GET['page']) ? $_GET['page'] : false;
-
 
 $id_user = isset($_SESSION['id_user']) ? $_SESSION['id_user'] : false;
 $nama = isset($_SESSION['nama_user']) ? $_SESSION['nama_user'] : false;

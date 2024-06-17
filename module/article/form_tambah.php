@@ -21,7 +21,7 @@
 
     <div class="flex flex-col">
         <label class="font-bold mb-2 text-indigo-700">Deskripsi Article</label>
-        <textarea name="deskripsi_article" class="border-2 border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required></textarea>
+        <textarea name="deskripsi_article" cols="30" rows="10" class="border-2 border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required></textarea>
     </div>
 
     <div class="flex flex-col">

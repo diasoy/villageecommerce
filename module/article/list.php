@@ -9,7 +9,7 @@
     $queryArticle = mysqli_query($koneksi, "SELECT * FROM article");
 
     if (mysqli_num_rows($queryArticle) == 0) {
-        echo "<h3 class='text-lg font-bold'>Saat ini belum ada data article yang dimasukan</h3>";
+        echo "<h3 class='text-lg font-bold text-center py-52'>Saat ini belum ada data article yang dimasukan</h3>";
     } else {
         echo "<table class='mx-4 border-collapse w-full mt-4'>
             <tr class='border-b p-1 text-white bg-indigo-700'>

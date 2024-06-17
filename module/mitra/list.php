@@ -12,7 +12,7 @@
     $queryMitra = mysqli_query($koneksi, "SELECT * FROM mitra WHERE id_user='$id_user' ORDER BY nama_mitra ASC");
 
     if (mysqli_num_rows($queryAdmin)  == 0) {
-        echo "<h3 class='text-center text-lg font-bold mt-4'>Saat ini belum ada data Mitra yang dimasukan</h3>";
+        echo "<h3 class='text-center text-lg font-bold py-52'>Saat ini belum ada data Mitra yang dimasukan</h3>";
     } else {
         if ($level == "admin") {
             echo "<table class='mx-4 border-collapse w-full mt-4'>";
@@ -43,7 +43,7 @@
 
             echo "</table>";
         } else {
-            echo "<table class='mx-4 border-collapse w-full mt-4'>";
+            echo "<table class='mx-4 border-collapse w-full mt-4 mb-52'>";
 
             echo "<tr class='border-b p-1 bg-indigo-600 text-white'>
                     <th class='w-1/12 text-center py-2'>No</th>

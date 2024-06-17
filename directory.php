@@ -79,7 +79,7 @@ if (isset($_GET['id_mitra'])) {
                 </div>
             <?php endwhile; ?>
         <?php else : ?>
-            <p>No mitras found.</p>
+            <p>No mitra found.</p>
         <?php endif; ?>
     </div>
 </div>
