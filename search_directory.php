@@ -20,7 +20,7 @@ if (mysqli_num_rows($result) > 0) {
         echo '<div class="flex flex-col py-5 mx-4">';
         echo '<h1 class="text-lg font-bold">' . $row['nama_mitra'] . '</h1>';
         echo '<p class="text-gray-500">' . $row['kategori_mitra'] . '</p>';
-        echo '<p class="text-gray-500">Rincian Harga : ' . $row['rincian_harga'] . '</p>';
+        echo '<p class="text-gray-500">No telp : ' . $row['phone_mitra'] . '</p>';
         echo '</div>';
         echo '</a>';
         echo '</div>';

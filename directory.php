@@ -73,7 +73,7 @@ if (isset($_GET['id_mitra'])) {
                         <div class="flex flex-col py-5 mx-4">
                             <h1 class="text-lg font-bold"><?= $row['nama_mitra']; ?></h1>
                             <p class="text-gray-500"><?= $row['kategori_mitra']; ?></p>
-                            <p class="text-gray-500">Rincian Harga: <?= $row['rincian_harga']; ?></p>
+                            <p class="text-gray-500">No telp : <?= $row['phone_mitra'] ?></p>
                         </div>
                     </a>
                 </div>

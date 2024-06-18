@@ -96,7 +96,7 @@ array_multisort($mitraValues, SORT_DESC, $mitraLabels);
         </div>
     </div>
 
-    <button class="bg-indigo-700 hover:bg-indigo-800 py-2 rounded-lg text-white font-semibold" id="downloadPrintButton">Download / Print Laporan</button>
+    <button class="bg-indigo-700 hover:bg-indigo-800 print:hidden py-2 rounded-lg text-white font-semibold" id="downloadPrintButton">Download / Print Laporan</button>
 
 </div>
 
