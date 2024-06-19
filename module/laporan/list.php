@@ -1,6 +1,6 @@
 <?php
 
-$userLevel = $_SESSION['level_user']; // 'admin' or 'customer'
+$userLevel = $_SESSION['level_user']; 
 
 $articleLabels = [];
 $articleValues = [];

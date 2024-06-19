@@ -1,4 +1,3 @@
-<!-- Buatkan sebuah halaman about yang cantik dan responsive untuk menceritakan penggunaan website dan tujuan dibuat website -->
 <div class="py-40">
     <div class="">
         <div class="lg:px-72 px-6 md:px-28">

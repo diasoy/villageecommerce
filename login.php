@@ -1,5 +1,4 @@
 <?php
-// login.php atau index.php?page=login
 
 if ($id_user) {
     header("Location: " . BASE_URL);
